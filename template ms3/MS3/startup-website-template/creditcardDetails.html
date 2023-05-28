@@ -98,27 +98,28 @@
                             width: 100%;
                             border-collapse: collapse;
                         }
-
-                        th, td {
+    
+                        th,
+                        td {
                             padding: 8px;
                             text-align: left;
                             border-bottom: 1px solid #ddd;
                         }
-
+    
                         th {
                             background-color: #f2f2f2;
                         }
                     </style>
                     <b>
                         <h2>Transaction History</h2>
-
+    
                         <!-- Bank Account Selection -->
-                        <select id="accountNumber" onchange="showTransactions()">
+                        <select id="accountNumber" onchange="showAccountDetails()">
                             <option value="">Select Bank Account</option>
                             <option value="21224">21224</option>
                             <option value="14457">14457</option>
                         </select>
-
+    
                         <!-- Table for Transactions -->
                         <table id="transactionTable" style="display: none;">
                             <thead>
@@ -132,162 +133,185 @@
                                 <!-- Transaction rows will be dynamically added here -->
                             </tbody>
                         </table>
-
-                        <script>
-                            function showTransactions() {
-                                // Get the selected account number
-                                var accountNumber = document.getElementById("accountNumber").value;
-
-                                // Hide the transaction table if no account is selected
-                                if (accountNumber === "") {
-                                    document.getElementById("transactionTable").style.display = "none";
-                                    return;
-                                }
-
-                                // Get the transaction body element
-                                var transactionBody = document.getElementById("transactionBody");
-
-                                // Clear any existing rows
-                                transactionBody.innerHTML = "";
-
-                                // Add the corresponding transactions based on the selected account number
-                                if (accountNumber === "21224") {
-                                    // Add transactions for account number 21224
-                                    addTransaction("2023-05-01", "Online Shopping", "EGP 1500.00");
-                                    addTransaction("2023-05-05", "Restaurant Bill", "EGP 800.00");
-                                    addTransaction("2023-05-10", "Grocery Shopping", "EGP 2800.00");
-                                } else if (accountNumber === "14457") {
-                                    // Add transactions for account number 14457
-                                    addTransaction("2023-05-02", "Utility Bill", "EGP 1200.00");
-                                    addTransaction("2023-05-07", "Travel Expenses", "EGP 2000.00");
-                                    addTransaction("2023-05-12", "Entertainment", "EGP 500.00");
-                                }
-
-                                // Show the transaction table
-                                document.getElementById("transactionTable").style.display = "table";
-                            }
-
-                            function addTransaction(date, description, amount) {
-                                // Create a new table row
-                                var newRow = document.createElement("tr");
-
-                                // Create table cells for date, description, and amount
-                                var dateCell = document.createElement("td");
-                                dateCell.textContent = date;
-                                var descriptionCell = document.createElement("td");
-                                descriptionCell.textContent = description;
-                                var amountCell = document.createElement("td");
-                                amountCell.textContent = amount;
-
-                                // Append the cells to the new row
-                                newRow.appendChild(dateCell);
-                                newRow.appendChild(descriptionCell);
-                                newRow.appendChild(amountCell);
-
-                                // Append the new row to the transaction body
-                                document.getElementById("transactionBody").appendChild(newRow);
-                            }
-                        </script>
-
-                        <br> </br>
-                        <br>
+    
+                        <br />
+    
+                        <br />
+                        <br />
                         <h3>Redeemable Points</h3>
-                        <div class="points" id="pointsLabel">5000</div>
-                        <input type="number" id="redeemPointsInput" placeholder="Enter points to redeem">
-                        <button onclick="decreasePoints()">Redeem</button>
-
-                        <script>
-                            function decreasePoints() {
-                                // Get the input value
-                                var redeemPointsInput = document.getElementById("redeemPointsInput");
-                                var pointsToRedeem = parseInt(redeemPointsInput.value);
-
-                                // Get the current points value
-                                var pointsLabel = document.getElementById("pointsLabel");
-                                var currentPoints = parseInt(pointsLabel.textContent);
-
-                                // Check if the input value is valid
-                                if (isNaN(pointsToRedeem) || pointsToRedeem <= 0 || pointsToRedeem > currentPoints) {
-                                    alert("Please enter a valid number of points to redeem.");
-                                    return;
-                                }
-
-                                // Decrease the points
-                                var newPoints = currentPoints - pointsToRedeem;
-                                pointsLabel.textContent = newPoints;
-
-                                // Perform any additional logic or actions here
-                                // ...
-
-                                // Optional: Reset the input value
-                                redeemPointsInput.value = "";
-                            }
-                        </script>
-
-                        </br>
-                        <br> </br>
-                        <br>
-                        <h4>Total due payments </h4>
-                        <div class="payments" id="paymentsLabel">20,000</div>
-                        <button type="button" class="payment-button" onclick="removeCreditCardPayments()">Pay fully</button>
-                        <button type="button" class="payment-button" onclick="showPaymentForm()">Pay partially</button>
+                        <div class="points" id="pointsLabel">0</div>
+                        <input type="number" id="redeemPointsInput" placeholder="Enter points to redeem" />
+                        <button onclick="redeemPoints()">Redeem</button>
+    
+                        <br />
+    
+                        <br />
+                        <br />
+                        <h4>Total Due Payment</h4>
+                        <div class="payments" id="paymentsLabel">0</div>
+                        <button type="button" class="payment-button" onclick="payFully()">Pay fully</button>
+                        <button type="button" class="payment-button" onclick="payPartially()">Pay partially</button>
                         <form class="payment-form" id="paymentForm">
-                            <input type="number" class="payment-input" id="paymentInput" placeholder="Enter payment amount">
-                            <button type="button" class="payment-button" onclick="decreaseCreditCardPayments()">Submit</button>
+                            <input type="number" class="payment-input" id="paymentInput" placeholder="Enter payment amount" />
+                            <button type="button" class="payment-button" onclick="submitPayment()">Submit</button>
                         </form>
                         <div class="payment-message" id="paymentMessage"></div>
-                        <script>
-                            function showPaymentForm() {
-                                document.getElementById('paymentForm').style.display = 'block'; // Show the payment form
-                            }
-
-                            function decreaseCreditCardPayments() {
-                                var totalDue = 500; // Total amount due, you can change this value
-                                var paymentInput = document.getElementById('paymentInput');
-                                var paymentAmount = parseFloat(paymentInput.value);
-
-                                if (isNaN(paymentAmount) || paymentAmount <= 0) {
-                                    // Show an error message if the entered payment amount is invalid
-                                    document.getElementById('paymentMessage').textContent = 'Please enter a valid payment amount.';
-                                } else if (paymentAmount > totalDue) {
-                                    // Show an error message if the entered payment amount exceeds the total due
-                                    document.getElementById('paymentMessage').textContent = 'Payment amount cannot exceed the total due amount.';
-                                } else {
-                                    // Process the payment and show a success message
-                                    var remainingDue = totalDue - paymentAmount;
-                                    document.getElementById('paymentMessage').textContent = 'Payment of $' + paymentAmount.toFixed(2) + ' successfully processed. Remaining due: $' + remainingDue.toFixed(2);
-                                }
-                            }
-                            function removeCreditCardPayments() {
-                                var paymentsLabel = document.getElementById('paymentsLabel');
-                                var currentPayments = parseInt(paymentsLabel.textContent);
-                                var updatedPayments = currentPayments - currentPayments;
-
-                                // Update the points label with the updated value
-                                paymentsLabel.textContent = updatedPayments.toString();
-                            }
-
-                            function decreaseCreditCardPayments() {
-                                var paymentsLabel = document.getElementById('paymentsLabel');
-                                var currentPayments = parseInt(paymentsLabel.textContent);
-                                var updatedPayments = currentPayments - 5000;
-
-                                // Update the points label with the updated value
-                                paymentsLabel.textContent = updatedPayments.toString();
-                            }
-
-                            function decreasePoints() {
-                                var pointsLabel = document.getElementById('pointsLabel');
-                                var currentPoints = parseInt(pointsLabel.textContent);
-                                var updatedPoints = currentPoints - 10;
-
-                                // Update the points label with the updated value
-                                pointsLabel.textContent = updatedPoints.toString();
-                            }
-                        </script>
-</div>
+                    </b>
+                </div>
+                <div class="button-container">
+                    <a href="services.html" class="btn btn-primary button-link">Back</a>
+                </div>
             </div>
         </div>
+    </div>
+    
+    <script>
+        var accountsData = {
+            "21224": {
+                transactions: [
+                    { date: "2023-05-01", description: "Online Shopping", amount: "EGP 1500.00" },
+                    { date: "2023-05-05", description: "Restaurant Bill", amount: "EGP 800.00" },
+                    { date: "2023-05-10", description: "Grocery Shopping", amount: "EGP 2800.00" },
+                ],
+                redeemablePoints: 5000,
+                paymentDue: 20000,
+            },
+            "14457": {
+                transactions: [
+                    { date: "2023-05-02", description: "Utility Bill", amount: "EGP 1200.00" },
+                    { date: "2023-05-07", description: "Travel Expenses", amount: "EGP 2000.00" },
+                    { date: "2023-05-12", description: "Entertainment", amount: "EGP 500.00" },
+                ],
+                redeemablePoints: 3000,
+                paymentDue: 15000,
+            },
+        };
+    
+        function showAccountDetails() {
+            // Get the selected account number
+            var accountNumber = document.getElementById("accountNumber").value;
+    
+            // Hide the transaction table if no account is selected
+            if (accountNumber === "") {
+                document.getElementById("transactionTable").style.display = "none";
+                document.getElementById("pointsLabel").textContent = "0";
+                document.getElementById("paymentsLabel").textContent = "0";
+                return;
+            }
+    
+            // Get the account data
+            var accountData = accountsData[accountNumber];
+    
+            // Update the transaction history
+            updateTransactionHistory(accountData.transactions);
+    
+            // Update the redeemable points
+            document.getElementById("pointsLabel").textContent = accountData.redeemablePoints;
+    
+            // Update the payment due
+            document.getElementById("paymentsLabel").textContent = accountData.paymentDue;
+    
+            // Show the transaction table
+            document.getElementById("transactionTable").style.display = "table";
+        }
+    
+        function updateTransactionHistory(transactions) {
+            // Get the transaction body element
+            var transactionBody = document.getElementById("transactionBody");
+    
+            // Clear any existing rows
+            transactionBody.innerHTML = "";
+    
+            // Add the corresponding transactions based on the selected account number
+            transactions.forEach(function (transaction) {
+                addTransaction(transaction.date, transaction.description, transaction.amount);
+            });
+        }
+    
+        function addTransaction(date, description, amount) {
+            // Create a new table row
+            var newRow = document.createElement("tr");
+    
+            // Create table cells for date, description, and amount
+            var dateCell = document.createElement("td");
+            dateCell.textContent = date;
+            var descriptionCell = document.createElement("td");
+            descriptionCell.textContent = description;
+            var amountCell = document.createElement("td");
+            amountCell.textContent = amount;
+    
+            // Append the cells to the new row
+            newRow.appendChild(dateCell);
+            newRow.appendChild(descriptionCell);
+            newRow.appendChild(amountCell);
+    
+            // Append the new row to the transaction body
+            document.getElementById("transactionBody").appendChild(newRow);
+        }
+    
+        function redeemPoints() {
+            // Get the input value
+            var redeemPointsInput = document.getElementById("redeemPointsInput");
+            var pointsToRedeem = parseInt(redeemPointsInput.value);
+    
+            // Get the current points value
+            var pointsLabel = document.getElementById("pointsLabel");
+            var currentPoints = parseInt(pointsLabel.textContent);
+    
+            // Check if the input value is valid
+            if (isNaN(pointsToRedeem) || pointsToRedeem <= 0 || pointsToRedeem > currentPoints) {
+                alert("Please enter a valid number of points to redeem.");
+                return;
+            }
+    
+            // Decrease the points
+            var newPoints = currentPoints - pointsToRedeem;
+            pointsLabel.textContent = newPoints;
+    
+            // Perform any additional logic or actions here
+            // ...
+    
+            // Optional: Reset the input value
+            redeemPointsInput.value = "";
+        }
+    
+        function payFully() {
+            var paymentsLabel = document.getElementById("paymentsLabel");
+            var currentPayments = parseInt(paymentsLabel.textContent);
+            var updatedPayments = currentPayments - currentPayments;
+    
+            // Update the payments label with the updated value
+            paymentsLabel.textContent = updatedPayments.toString();
+        }
+    
+        function payPartially() {
+            document.getElementById("paymentForm").style.display = "block"; // Show the payment form
+        }
+    
+        function submitPayment() {
+            var totalDue = parseInt(document.getElementById("paymentsLabel").textContent);
+            var paymentInput = parseInt(document.getElementById("paymentInput").value);
+    
+            if (isNaN(paymentInput) || paymentInput <= 0 || paymentInput > totalDue) {
+                document.getElementById("paymentMessage").textContent = "Please enter a valid payment amount.";
+                return;
+            }
+    
+            var remainingDue = totalDue - paymentInput;
+            document.getElementById("paymentsLabel").textContent = remainingDue.toString();
+            document.getElementById("paymentForm").style.display = "none"; // Hide the payment form
+            document.getElementById("paymentMessage").textContent = ""; // Clear the payment message
+            document.getElementById("paymentInput").value = ""; // Reset the payment input value
+        }
+    </script>
+    
+    
+</div>
+
+            </div>
+           
+        </div>
+        
     </div>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>

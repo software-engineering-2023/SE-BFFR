@@ -96,71 +96,76 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Reminder</h5>
+                        <h5 class="fw-bold text-primary text-uppercase">Set Reminder</h5>
                         <h1 class="mb-0">Following information is required to Set a Reminder</h1>
                     </div>
+                    <div class="button-container">
+                        <a href="services.html" class="btn btn-primary button-link">Back</a>
+                    </div>
                 </div>
-               <div class="col-lg-5">
-    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-        <form>
-            <br>
-            <div class="col-xl-12">
-                <label for="dateInput">Reminder Date:</label>
-                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Reminder Date" style="height: 55px;" required>
-            </div>
-            </br>
-            <div class="col-12">
-                <select id="accountType" class="form-select bg-light border-0" style="height: 55px;" required>
-                    <option selected disabled>Bill Type</option>
-                    <option value="1">Gas</option>
-                    <option value="2">Telephone</option>
-                    <option value="3">Electricity</option>
-                    <option value="4">Water</option>
-                </select>
-            </div>
-            <br />
-            <div class="col-12">
-                <input type="number" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
-            </div>
-            <br>
-            <div class="col-xl-12">
-                <label for="dueDateInput">Due Date:</label>
-                <input type="date" id="dueDateInput" class="form-control bg-light border-0" placeholder="Due Date" style="height: 55px;" required>
-            </div>
-
-            </br>
-
-            <!-- Submit button -->
-            <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
-
-            <!-- JavaScript -->
-            <script>
-                // Get a reference to the submit button
-                var submitButton = document.getElementById("submitButton");
-
-                // Add an event listener to the submit button
-                submitButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-
-                    // Get the values of the input fields
-                    var reminderDate = document.getElementById("dateInput").value;
-                    var billType = document.getElementById("accountType").value;
-                    var amount = document.getElementById("amount").value;
-                    var dueDate = document.getElementById("dueDateInput").value;
-
-                    // Check if any field is empty
-                    if (reminderDate === "" || billType === "" || amount === "" || dueDate === "") {
-                        // Show an error message for the empty fields
-                        window.alert("Please fill in all the fields.");
-                    } else {
-                        // Show the success message as an alert box
-                        window.alert("You set a Reminder Successfully!");
-
-                        // Redirect to the home page (replace "home.html" with the actual home page URL)
-                        window.location.href = "services.html";
-                    }
-                });
-            </script>
+                <div class="col-lg-5">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <form>
+                            <br>
+                            <div class="col-xl-12">
+                                <label for="dateInput">Reminder Date:</label>
+                                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Reminder Date" style="height: 55px;" required>
+                            </div>
+                            </br>
+                            <div class="col-12">
+                                <select id="accountType" class="form-select bg-light border-0" style="height: 55px;" required>
+                                    <option selected disabled>Bill Type</option>
+                                    <option value="1">Gas</option>
+                                    <option value="2">Telephone</option>
+                                    <option value="3">Electricity</option>
+                                    <option value="4">Water</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="col-12">
+                                <input type="number" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
+                            </div>
+                            <br>
+                            <div class="col-xl-12">
+                                <label for="dueDateInput">Due Date:</label>
+                                <input type="date" id="dueDateInput" class="form-control bg-light border-0" placeholder="Due Date" style="height: 55px;" required>
+                            </div>
+                            </br>
+                            <!-- Submit button -->
+                            <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+    
+                            <!-- JavaScript -->
+                            <script>
+                                // Get a reference to the submit button
+                                var submitButton = document.getElementById("submitButton");
+    
+                                // Add an event listener to the submit button
+                                submitButton.addEventListener("click", function (event) {
+                                    event.preventDefault(); // Prevent form submission (adjust if needed)
+    
+                                    // Get the values of the input fields
+                                    var reminderDate = document.getElementById("dateInput").value;
+                                    var billType = document.getElementById("accountType").value;
+                                    var amount = document.getElementById("amount").value;
+                                    var dueDate = document.getElementById("dueDateInput").value;
+    
+                                    // Check if any field is empty
+                                    if (reminderDate === "" || billType === "" || amount === "" || dueDate === "") {
+                                        // Show an error message for the empty fields
+                                        window.alert("Please fill in all the fields.");
+                                    } else {
+                                        // Show the success message as an alert box
+                                        window.alert("You set a Reminder Successfully!");
+    
+                                        // Redirect to the home page (replace "services.html" with the actual home page URL)
+                                        window.location.href = "services.html";
+                                    }
+                                });
+                            </script>
+                        </form>
+                    </div>
+               
+    
         </form>
     </div>
 </div>

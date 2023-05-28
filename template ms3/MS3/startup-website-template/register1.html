@@ -99,20 +99,23 @@
                         <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
                         <h1 class="mb-0">Please fill the following information for creating a bank account</h1>
                     </div>
+                    <div class="button-container">
+                        <a href="services.html" class="btn btn-primary button-link">Back</a>
+                    </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form id="myForm">
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="First Name" style="height: 55px;" required>
+                                <input type="text" id="firstNameInput" class="form-control bg-light border-0" placeholder="First Name" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Middle Name" style="height: 55px;" required>
+                                <input type="email" id="middleNameInput" class="form-control bg-light border-0" placeholder="Middle Name" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Last Name" style="height: 55px;" required>
+                                <input type="email" id="lastNameInput" class="form-control bg-light border-0" placeholder="Last Name" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-xl-12">
@@ -120,32 +123,32 @@
                             </div>
                             </br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Address" style="height: 55px;" required>
+                                <input type="text" id="addressInput" class="form-control bg-light border-0" placeholder="Address" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Email" style="height: 55px;" required>
+                                <input type="email" id="emailInput" class="form-control bg-light border-0" placeholder="Email" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Phone number" style="height: 55px;" required>
+                                <input type="text" id="phoneNumberInput" class="form-control bg-light border-0" placeholder="Phone number" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Nationality" style="height: 55px;" required>
+                                <input type="text" id="nationalityInput" class="form-control bg-light border-0" placeholder="Nationality" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0" placeholder="National id/Passport" style="height: 55px;" required>
+                                <input type="email" id="nationalIdInput" class="form-control bg-light border-0" placeholder="National id/Passport" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Job" style="height: 55px;" required>
+                                <input type="text" id="jobInput" class="form-control bg-light border-0" placeholder="Job" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-12">
                                 <select id="accountType" class="form-select bg-light border-0" style="height: 55px;" required>
-                                    <option selected>Select Account type</option>
+                                    <option selected disabled>Select Account type</option>
                                     <option value="1">Savings Account</option>
                                     <option value="2">Checking Account</option>
                                     <option value="3">Business Account</option>
@@ -153,37 +156,77 @@
                             </div>
                             <br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Username" style="height: 55px;" required>
+                                <input type="text" id="usernameInput" class="form-control bg-light border-0" placeholder="Username" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Create Password" style="height: 55px;" required>
+                                <input type="password" id="passwordInput" class="form-control bg-light border-0" placeholder="Create Password" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-xl-12">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Confirm Password" style="height: 55px;"
+                                <input type="password" id="confirmPasswordInput" class="form-control bg-light border-0" placeholder="Confirm Password" style="height: 55px;" required>
                             </div>
                             </br>
-
+                
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
-
+                
                             <!-- JavaScript -->
                             <script>
                                 // Get a reference to the submit button
                                 var submitButton = document.getElementById("submitButton");
-
+                
                                 // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); // Prevent form submission (adjust if needed)
-
-                                    // Show the success message as an alert box
-                                    window.alert("You Signed Up Successfully!");
-
-                                    // Redirect to the home page (replace "home.html" with the actual home page URL)
-                                    window.location.href = "Htmlpage.html";
+                
+                                    // Check if any required field is empty
+                                    var firstName = document.getElementById("firstNameInput").value;
+                                    var middleName = document.getElementById("middleNameInput").value;
+                                    var lastName = document.getElementById("lastNameInput").value;
+                                    var dateOfBirth = document.getElementById("dateInput").value;
+                                    var address = document.getElementById("addressInput").value;
+                                    var email = document.getElementById("emailInput").value;
+                                    var phoneNumber = document.getElementById("phoneNumberInput").value;
+                                    var nationality = document.getElementById("nationalityInput").value;
+                                    var nationalId = document.getElementById("nationalIdInput").value;
+                                    var job = document.getElementById("jobInput").value;
+                                    var accountType = document.getElementById("accountType").value;
+                                    var username = document.getElementById("usernameInput").value;
+                                    var password = document.getElementById("passwordInput").value;
+                                    var confirmPassword = document.getElementById("confirmPasswordInput").value;
+                
+                                    if (
+                                        firstName === "" ||
+                                        middleName === "" ||
+                                        lastName === "" ||
+                                        dateOfBirth === "" ||
+                                        address === "" ||
+                                        email === "" ||
+                                        phoneNumber === "" ||
+                                        nationality === "" ||
+                                        nationalId === "" ||
+                                        job === "" ||
+                                        accountType === "" ||
+                                        username === "" ||
+                                        password === "" ||
+                                        confirmPassword === ""
+                                    ) {
+                                        // Display error message
+                                        window.alert("Please fill in all required fields.");
+                                    } else {
+                                        // Show the success message as an alert box
+                                        window.alert("You Signed Up Successfully!");
+                
+                                        // Redirect to the home page (replace "Htmlpage.html" with the actual home page URL)
+                                        window.location.href = "Htmlpage.html";
+                                    }
                                 });
                             </script>
+                        </form>
+                    </div>
+                </div>
+                
 
                         </form>
 

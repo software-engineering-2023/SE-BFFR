@@ -56,7 +56,13 @@
                         <label for="password">Password: </label>
                         <input type="password" id="password" name="password"><br>
                         </br>
-                        <button class="btn btn-primary animated slideInDowns" type="button" onclick="login()">Login</button>
+                        <div class="col-lg-7">
+                            <!-- Login button -->
+                            <button class="btn btn-primary animated slideInDowns" type="button" onclick="login()">Login</button>
+                            <!-- Back button -->
+                            <a href="first.html" class="btn btn-primary button-link ml-2">Back</a>
+                        </div>
+                        
                     </form>
                 </div>
 
@@ -77,7 +83,7 @@
             let password = document.getElementById("password").value;
 
             if (users.client.username === username && users.client.password === password) {
-                window.location.href = "clientView.html";
+                window.location.href = "services.html";
             } else if (users.banker.username === username && users.banker.password === password) {
                 window.location.href = "bankerView.html";
             } else if (users.admin.username === username && users.admin.password === password) {
