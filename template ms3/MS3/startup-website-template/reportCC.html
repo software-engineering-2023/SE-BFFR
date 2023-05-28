@@ -151,26 +151,41 @@
                     <form>
                         <div class="row g-3">
                             <div class="col-12">
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Full Name"></textarea>
+                            </div>
+                            <div class="col-12">
                                 <select id="accountNumber" class="form-select bg-light border-0" style="height: 55px;" required>
                                     <option selected disabled>Account Number</option>
                                     <option value="1">21224</option>
                                     <option value="2">14457</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xl-12">
+                                <textarea type = "text" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Phone Number"></textarea>
+                            </div>
+                            <div class="col-xl-12">
+                                <label for="dateInput">Date of the Incident:</label>
+                                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Date of the Incident" style="height: 55px;" required>
+                            </div>
+                            <div class="col-xl-12">
                                 <input type="email" class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;">
                             </div>
-                            <div class="col-12">
+                            <div class="col-xl-12">
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Location of Incident"></textarea>
+                            </div>
+                            <div class="col-xl-12">
+                                <label for="dateInput"> If the you has filed a police report regarding the theft, loss, or damage, please provide the reference number of the report, if not just type "None"</label>
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Police report or incident reference number"></textarea>
+                            </div>
+                            <div class="col-xl-12">
                                 <select id="issueSubject" class="form-select bg-light border-0" style="height: 55px;" required>
                                     <option selected>Issue Subject</option>
-                                    <option value="1">echnical issue</option>
+                                    
                                     <option value="2">credit card theft/loss</option>
                                     <option value="3">credit card damage</option>
                                 </select>
                             </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Issue Description"></textarea>
-                            </div>
+                            
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Send Report</button>
                             </div>

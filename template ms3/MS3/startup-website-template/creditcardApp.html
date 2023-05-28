@@ -130,10 +130,10 @@
                                 </select>
                             </div>
                             </br>
-
+                
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
-
+                
                             <!-- JavaScript -->
                             <script>
                                 // Get a reference to the loan application form and form inputs
@@ -142,11 +142,11 @@
                                 var collateralInput = document.getElementById("collateralInput");
                                 var salaryInput = document.getElementById("salaryInput");
                                 var creditCardTypeSelect = document.getElementById("creditCardTypeSelect");
-
+                
                                 // Add an event listener to the form submission
                                 loanApplicationForm.addEventListener("submit", function (event) {
                                     event.preventDefault(); // Prevent form submission (adjust if needed)
-
+                
                                     // Check if all fields are filled
                                     if (
                                         accountNumberInput.value === "" ||
@@ -158,8 +158,8 @@
                                         window.alert("Please fill in all fields.");
                                     } else {
                                         // Show the success message as an alert box
-                                        window.alert("You applied for a credit card successfully!");
-
+                                        window.alert("You applied for a loan successfully!");
+                
                                         // Redirect to the home page (replace "services.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
@@ -168,6 +168,7 @@
                         </form>
                     </div>
                 </div>
+                
 
 
 

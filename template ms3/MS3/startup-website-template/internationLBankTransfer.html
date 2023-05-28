@@ -79,7 +79,6 @@
                                 <input type="text" id="bankCity" class="form-control bg-light border-0" placeholder="Bank City" style="height: 55px;" required>
                             </div>
                             <br />
-
                             <div class="col-xl-12">
                                 <input type="text" id="bankAddress" class="form-control bg-light border-0" placeholder="Bank Address" style="height: 55px;" required>
                             </div>
@@ -104,8 +103,6 @@
                                 <input type="text" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account Number" style="height: 55px;" required>
                             </div>
                             <br />
-
-
                             <div class="col-12">
                                 <select id="accountNumber" class="form-select bg-light border-0" style="height: 55px;" required>
                                     <option selected disabled>Account Number</option>
@@ -113,7 +110,7 @@
                                     <option value="2">14457</option>
                                 </select>
                             </div>
-                            </br>
+                            <br />
                             <div class="col-12">
                                 <input type="email" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
                             </div>
@@ -134,18 +131,17 @@
                                 <input type="text" id="transactionDescription" class="form-control bg-light border-0" placeholder="Transaction Description" style="height: 55px;" required>
                             </div>
                             <br />
-
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
-
+                
                             <!-- JavaScript -->
                             <script>
                                 // Get a reference to the submit button
                                 var submitButton = document.getElementById("submitButton");
-
+                
                                 // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); // Prevent form submission (adjust if needed)
-
+                
                                     // Get input field values
                                     var bankName = document.getElementById("bankName").value;
                                     var bankCountry = document.getElementById("bankCountry").value;
@@ -162,7 +158,7 @@
                                     var transactionDate = document.getElementById("dateInput").value;
                                     var transactionPurpose = document.getElementById("transactionPurpose").value;
                                     var transactionDescription = document.getElementById("transactionDescription").value;
-
+                
                                     // Check if any field is empty
                                     if (
                                         !bankName ||
@@ -186,7 +182,7 @@
                                     } else {
                                         // Show the success message as an alert box
                                         window.alert("Your Transfer is Done Successfully!");
-
+                
                                         // Redirect to the home page (replace "home.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
@@ -195,6 +191,7 @@
                         </form>
                     </div>
                 </div>
+                
 
             </div>
                     </form>

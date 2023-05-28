@@ -117,15 +117,15 @@
                             </div>
                             </br>
                             <div class="col-12">
-                                <input type="email" id="repaymentPeriod" class="form-control bg-light border-0" placeholder="Repayment Period" style="height: 55px;" required>
+                                <input type="text" id="repaymentPeriod" class="form-control bg-light border-0" placeholder="Repayment Period" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-12">
-                                <input type="email" id="collateral" class="form-control bg-light border-0" placeholder="Collateral" style="height: 55px;" required>
+                                <input type="text" id="collateral" class="form-control bg-light border-0" placeholder="Collateral" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-12">
-                                <input type="email" id="salary" class="form-control bg-light border-0" placeholder="Salary" style="height: 55px;" required>
+                                <input type="text" id="salary" class="form-control bg-light border-0" placeholder="Salary" style="height: 55px;" required>
                             </div>
                             <br>
                             <div class="col-12">
@@ -141,26 +141,26 @@
                         </form>
                     </div>
                 </div>
-
+                
                 <!-- JavaScript -->
                 <script>
                     // Get a reference to the submit button
                     var submitButton = document.getElementById("submitButton");
-
+                
                     // Add an event listener to the submit button
                     submitButton.addEventListener("click", function (event) {
                         event.preventDefault(); // Prevent form submission and page reload
-
+                
                         // Check if all fields are filled
-                        var bankAccountNumber = document.getElementById("bankAccountNumber").value;
+                        var accountNumber = document.getElementById("accountNumber").value;
                         var amount = document.getElementById("amount").value;
                         var repaymentPeriod = document.getElementById("repaymentPeriod").value;
                         var collateral = document.getElementById("collateral").value;
                         var salary = document.getElementById("salary").value;
                         var purpose = document.getElementById("purpose").value;
-
+                
                         if (
-                            bankAccountNumber &&
+                            accountNumber &&
                             amount &&
                             repaymentPeriod &&
                             collateral &&
@@ -169,7 +169,7 @@
                         ) {
                             // Show the success message as an alert dialog
                             window.alert("You applied for a Loan Successfully!");
-
+                
                             // Redirect to the services page
                             window.location.href = "services.html";
                         } else {
@@ -178,7 +178,7 @@
                         }
                     });
                 </script>
-
+                
 
 
 

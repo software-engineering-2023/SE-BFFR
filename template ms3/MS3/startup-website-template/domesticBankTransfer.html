@@ -123,19 +123,19 @@
                                 <input type="text" id="transactionDescription" class="form-control bg-light border-0" placeholder="Transaction Description" style="height: 55px;" required>
                             </div>
                             <br />
-
+                
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
-
+                
                             <!-- JavaScript -->
                             <script>
                                 // Get a reference to the submit button
                                 var submitButton = document.getElementById("submitButton");
-
+                
                                 // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); // Prevent form submission (adjust if needed)
-
+                
                                     // Get references to all input fields
                                     var bankNameInput = document.getElementById("bankName");
                                     var bankAddressInput = document.getElementById("bankAddress");
@@ -150,7 +150,7 @@
                                     var dateInput = document.getElementById("dateInput");
                                     var transactionPurposeInput = document.getElementById("transactionPurpose");
                                     var transactionDescriptionInput = document.getElementById("transactionDescription");
-
+                
                                     // Check if any field is empty
                                     if (
                                         bankNameInput.value === "" ||
@@ -172,7 +172,7 @@
                                     } else {
                                         // Show the success message as an alert box
                                         window.alert("Your Transfer is Done Successfully!");
-
+                
                                         // Redirect to the home page (replace "home.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
@@ -181,6 +181,7 @@
                         </form>
                     </div>
                 </div>
+                
 
 
             </div>

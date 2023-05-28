@@ -158,22 +158,54 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;">
+                                <input type="email" id="emailInput" class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
                                 <select id="issueSubject" class="form-select bg-light border-0" style="height: 55px;" required>
-                                    <option selected>Issue Subject</option>
-                                    <option value="1">echnical issue</option>
-                                    <option value="2">credit card theft/loss</option>
-                                    <option value="3">credit card damage</option>
+                                    <option selected disabled>Issue Subject</option>
+                                    <option value="1">Technical issue</option>
+                                    
                                 </select>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Issue Description"></textarea>
+                                <textarea id="issueDescription" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Issue Description" required></textarea>
                             </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Report</button>
-                            </div>
+                            <!-- Submit button -->
+                            <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Send Report</button>
+            
+                            <!-- JavaScript -->
+                            <script>
+                                // Get a reference to the submit button
+                                var submitButton = document.getElementById("submitButton");
+            
+                                // Add an event listener to the submit button
+                                submitButton.addEventListener("click", function (event) {
+                                    event.preventDefault(); // Prevent form submission (adjust if needed)
+            
+                                    // Get the values of the input fields
+                                    var accountNumber = document.getElementById("accountNumber").value;
+                                    var email = document.getElementById("emailInput").value;
+                                    var issueSubject = document.getElementById("issueSubject").value;
+                                    var issueDescription = document.getElementById("issueDescription").value;
+            
+                                    // Check if any field is empty
+                                    if (accountNumber === "" || email === "" || issueSubject === "" || issueDescription === "") {
+                                        // Show an error message for the empty fields
+                                        window.alert("Please fill in all the fields.");
+                                    } else {
+                                        // Show the success message as an alert box
+                                        window.alert("Your Report is sent Successfully!");
+            
+                                        // Redirect to the home page (replace "home.html" with the actual home page URL)
+                                        window.location.href = "services.html";
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
                         </div>
                     </form>
                 </div>

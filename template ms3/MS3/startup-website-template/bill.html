@@ -97,23 +97,23 @@
                                 </select>
                             </div>
                             </br>
-
+                
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
-
+                
                             <!-- JavaScript -->
                             <script>
                                 // Get a reference to the submit button
                                 var submitButton = document.getElementById("submitButton");
-
+                
                                 // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); // Prevent form submission (adjust if needed)
-
+                
                                     // Get references to the input fields
                                     var accountTypeInput = document.getElementById("accountType");
                                     var billAmountInput = document.getElementById("billAmount");
                                     var accountNumberInput = document.getElementById("accountNumber");
-
+                
                                     // Check if any field is empty
                                     if (accountTypeInput.value === "") {
                                         // Show an error message for the dropdown menu
@@ -124,7 +124,7 @@
                                     } else {
                                         // Show the success message as an alert box
                                         window.alert("Your Bill is Paid Successfully!");
-
+                
                                         // Redirect to the home page (replace "home.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
@@ -133,6 +133,7 @@
                         </form>
                     </div>
                 </div>
+                
 
                 </form>
             </div>

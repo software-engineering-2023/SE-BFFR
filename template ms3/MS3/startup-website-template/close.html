@@ -84,28 +84,39 @@
                                 <input type="text" id="reason" class="form-control bg-light border-0" placeholder="Reason" style="height: 55px;" required>
                             </div>
                             </br>
-
-                            </br>
-
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Send Request</button>
-
-                            <!-- JavaScript -->
-                            <script>
-                                // Get a reference to the submit button
-                                var submitButton = document.getElementById("submitButton");
-
-                                // Add an event listener to the submit button
-                                submitButton.addEventListener("click", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
-
-                                    // Show the success message as an alert box
-                                    window.alert("Your Request Is sent Successfully!");
-
-                                    // Redirect to the home page (replace "home.html" with the actual home page URL)
-                                    window.location.href = "services.html";
-                                });
-                            </script>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <script>
+                    // Get a reference to the submit button
+                    var submitButton = document.getElementById("submitButton");
+                
+                    // Add an event listener to the submit button
+                    submitButton.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent form submission (adjust if needed)
+                
+                        // Get the values of the input fields
+                        var accountNumber = document.getElementById("accountNumber").value;
+                        var reason = document.getElementById("reason").value;
+                
+                        // Check if any field is empty
+                        if (accountNumber === "" || reason === "") {
+                            // Show an error message for the empty fields
+                            window.alert("Please fill in all the fields.");
+                        } else {
+                            // Show the success message as an alert box
+                            window.alert("Your Request Is sent Successfully!");
+                
+                            // Redirect to the home page (replace "home.html" with the actual home page URL)
+                            window.location.href = "services.html";
+                        }
+                    });
+                </script>
+                
                         </form>
                     </div>
                 </div>
