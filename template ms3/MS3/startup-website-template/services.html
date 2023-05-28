@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BFFR Online Banking System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr.team@gmail.com</small>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+        <!-- Navbar Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>BFFR</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="first.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link active">Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                <a href="detail.html" class="dropdown-item">Blog Detail</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                                <a href="feature.html" class="dropdown-item">Our features</a>
+                                <a href="team.html" class="dropdown-item">Team Members</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="quote.html" class="dropdown-item">Free Quote</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+    <!-- Service Start -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Payment Reminder</title>
+        <style>
+            .reminder-popup {
+                position: fixed;
+                top: 48px;
+                left: 20px;
+                padding: 10px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                
+            }
+
+                .reminder-popup h2 {
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                .reminder-popup p {
+                    margin-top: 5px;
+                    font-size: 12px;
+                }
+
+                .reminder-popup button {
+                    display: block;
+                    margin-top: 10px;
+                    padding: 5px 10px;
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    cursor: pointer;
+                }
+        </style>
+    </head>
+    <body>
+        <!-- Your webpage content here -->
+        <!-- Reminder Popup -->
+        <div id="reminderPopup" class="reminder-popup" style="display: none;">
+            <h2>Payment Due</h2>
+            <p>Please make your payment.</p>
+            <a href="reminder.html" class="btn btn-primary reminder-button">View My Reminders</a>
+            <button id="closePopupBtn">Close</button>
+
+        </div>
+        <style>
+            .reminder-button {
+                display: block;
+                margin-top: 10px;
+                padding: 5px 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 12px;
+                cursor: pointer;
+                text-decoration: none;
+                
+            }
+            
+
+            
+
+        </style>
+
+        <!-- JavaScript -->
+        <script>
+            // Show the reminder popup
+            function showReminderPopup() {
+                document.getElementById("reminderPopup").style.display = "block";
+            }
+
+            // Close the reminder popup
+            function closeReminderPopup() {
+                document.getElementById("reminderPopup").style.display = "none";
+            }
+
+            // Trigger the popup when necessary (e.g., when the payment due date approaches)
+            // Call the showReminderPopup() function at the appropriate time
+            showReminderPopup();
+
+            // Attach an event listener to the close button
+            document.getElementById("closePopupBtn").addEventListener("click", closeReminderPopup);
+        </script>
+    </body>
+</html>
+
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+            <h1 class="mb-0"></h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fa fa-shield-alt text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Credit Card</h4>
+                    <div class="nav-item dropdown">
+                        <a class="btn btn-lg btn-primary rounded" href="creditcardDetails.html">
+                            <i class="bi bi-arrow-right"></i>
+                            <div class="dropdown-menu" id="">
+                                <a class="dropdown-item" href="creditcardApp.html">Apply For a Credit Card</a>
+                                <a class="dropdown-item" href="creditcardDetails.html">My Credit Card</a>
+                                <a class="dropdown-item" href="reportCC.html">Report Credit Card Issue</a>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fa fa-chart-pie text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Loan</h4>
+                    <div class="nav-item dropdown">
+                        <a class="btn btn-lg btn-primary rounded" href="loanDetails.html">
+                            <i class="bi bi-arrow-right"></i>
+                            <div class="dropdown-menu" id="">
+                                <a class="dropdown-item" href="loanApp.html">Apply For a Loan</a>
+                                <a class="dropdown-item" href="loanDetails.html">My Loan Details</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fa fa-code text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Bill payments</h4>
+                    <a class="btn btn-lg btn-primary rounded" href="bill.html">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fab fa-android text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Bank Transfer</h4>
+                    <div class="nav-item dropdown">
+                        <a class="btn btn-lg btn-primary rounded" href="creditcardDetails.html">
+                            <i class="bi bi-arrow-right"></i>
+                            <div class="dropdown-menu" id="">
+                                <a class="dropdown-item" href="internalBankTransfer.html">Internal</a>
+                                <a class="dropdown-item" href="domesticBankTransfer.html">Domestic</a>
+                                <a class="dropdown-item" href="internationLBankTransfer.html">International</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fa fa-search text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Account Details</h4>
+                    <p class="m-0"> </p>
+                    <a class="btn btn-lg btn-primary rounded" href="clientView.html">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                    <h3 class="text-white mb-3">Manage your account</h3>
+                    <a href="close.html" class="btn btn-primary animated slideInDown">close bank account</a>
+
+
+                    <div class="nav-item dropdown">
+                        <i class="btn btn-primary animated slideInDown" id="reminderbutton">Manage Reminders</i>
+                        <div class="dropdown-menu" id="reminderdropdown">
+                            <a class="dropdown-item" href="setReminder.html">Set Reminder</a>
+                            <a class="dropdown-item" href="reminder.html">My Reminders</a>
+                        </div>
+                        </a>
+                    </div>
+                    <a href="reportissue.html" class="btn btn-primary animated slideInDown">Report Issue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Get references to the button and dropdown menu
+    var reminderbutton = document.getElementById("reminderbutton");
+    var reminderdropdown = document.getElementById("reminderdropdown");
+
+    // Hide the dropdown menu by default
+    signupDropdown.style.display = "none";
+
+    // Add a click event listener to the button
+    reminderbutton.addEventListener("click", function () {
+        // Toggle the visibility of the dropdown menu
+        if (reminderdropdown.style.display === "none") {
+            reminderdropdown.style.display = "block";
+        } else {
+            reminderdropdown.style.display = "none";
+        }
+    });</script>
+<!-- Service End -->
+<!-- Vendor End -->
+<!-- Footer End -->
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

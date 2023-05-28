@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BFFR Online Banking System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr@gmail.com</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <!-- Navbar End -->
+    <!-- Quote Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">International Bank Transfer</h5>
+                        <h1 class="mb-0">Following information is required for a Bank Transfer</h1>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <form>
+                            <br>
+                            <div class="col-xl-12">
+                                <input type="text" id="bankName" class="form-control bg-light border-0" placeholder="Bank Name" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="bankCountry" class="form-control bg-light border-0" placeholder="Bank Country" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="bankCity" class="form-control bg-light border-0" placeholder="Bank City" style="height: 55px;" required>
+                            </div>
+                            <br />
+
+                            <div class="col-xl-12">
+                                <input type="text" id="bankAddress" class="form-control bg-light border-0" placeholder="Bank Address" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="bankCode" class="form-control bg-light border-0" placeholder="Bank Code" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="beneficiaryFirstName" class="form-control bg-light border-0" placeholder="Beneficiary First Name" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="beneficiaryMiddleName" class="form-control bg-light border-0" placeholder="Beneficiary Middle Name" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="beneficiaryLastName" class="form-control bg-light border-0" placeholder="Beneficiary Last Name" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account Number" style="height: 55px;" required>
+                            </div>
+                            <br />
+
+
+                            <div class="col-12">
+                                <select id="accountNumber" class="form-select bg-light border-0" style="height: 55px;" required>
+                                    <option selected disabled>Account Number</option>
+                                    <option value="1">21224</option>
+                                    <option value="2">14457</option>
+                                </select>
+                            </div>
+                            </br>
+                            <div class="col-12">
+                                <input type="email" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="currency" class="form-control bg-light border-0" placeholder="Currency" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Transaction Date:" style="height: 55px;" required>
+                            </div>
+                            <br />
+                            <div class="col-xl-12">
+                                <input type="text" id="transactionPurpose" class="form-control bg-light border-0" placeholder="Transaction Purpose" style="height: 55px;" required>
+                            </div>
+                            </br>
+                            <div class="col-xl-12">
+                                <input type="text" id="transactionDescription" class="form-control bg-light border-0" placeholder="Transaction Description" style="height: 55px;" required>
+                            </div>
+                            <br />
+
+                            <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
+
+                            <!-- JavaScript -->
+                            <script>
+                                // Get a reference to the submit button
+                                var submitButton = document.getElementById("submitButton");
+
+                                // Add an event listener to the submit button
+                                submitButton.addEventListener("click", function (event) {
+                                    event.preventDefault(); // Prevent form submission (adjust if needed)
+
+                                    // Get input field values
+                                    var bankName = document.getElementById("bankName").value;
+                                    var bankCountry = document.getElementById("bankCountry").value;
+                                    var bankCity = document.getElementById("bankCity").value;
+                                    var bankAddress = document.getElementById("bankAddress").value;
+                                    var bankCode = document.getElementById("bankCode").value;
+                                    var beneficiaryFirstName = document.getElementById("beneficiaryFirstName").value;
+                                    var beneficiaryMiddleName = document.getElementById("beneficiaryMiddleName").value;
+                                    var beneficiaryLastName = document.getElementById("beneficiaryLastName").value;
+                                    var beneficiaryAccountNumber = document.getElementById("beneficiaryAccountNumber").value;
+                                    var accountNumber = document.getElementById("accountNumber").value;
+                                    var amount = document.getElementById("amount").value;
+                                    var currency = document.getElementById("currency").value;
+                                    var transactionDate = document.getElementById("dateInput").value;
+                                    var transactionPurpose = document.getElementById("transactionPurpose").value;
+                                    var transactionDescription = document.getElementById("transactionDescription").value;
+
+                                    // Check if any field is empty
+                                    if (
+                                        !bankName ||
+                                        !bankCountry ||
+                                        !bankCity ||
+                                        !bankAddress ||
+                                        !bankCode ||
+                                        !beneficiaryFirstName ||
+                                        !beneficiaryMiddleName ||
+                                        !beneficiaryLastName ||
+                                        !beneficiaryAccountNumber ||
+                                        !accountNumber ||
+                                        !amount ||
+                                        !currency ||
+                                        !transactionDate ||
+                                        !transactionPurpose ||
+                                        !transactionDescription
+                                    ) {
+                                        // Display error message if any field is empty
+                                        window.alert("Please fill in all the required fields.");
+                                    } else {
+                                        // Show the success message as an alert box
+                                        window.alert("Your Transfer is Done Successfully!");
+
+                                        // Redirect to the home page (replace "home.html" with the actual home page URL)
+                                        window.location.href = "services.html";
+                                    }
+                                });
+                            </script>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

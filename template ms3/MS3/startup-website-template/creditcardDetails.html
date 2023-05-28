@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BFFR Online Banking System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr@gmail.com</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>BFFR</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="detail.html" class="dropdown-item">Blog Detail</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="team.html" class="dropdown-item">Team Members</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item active">Free Quote</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <!-- Quote Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <style>
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+
+                        th, td {
+                            padding: 8px;
+                            text-align: left;
+                            border-bottom: 1px solid #ddd;
+                        }
+
+                        th {
+                            background-color: #f2f2f2;
+                        }
+                    </style>
+                    <b>
+                        <h2>Transaction History</h2>
+
+                        <!-- Bank Account Selection -->
+                        <select id="accountNumber" onchange="showTransactions()">
+                            <option value="">Select Bank Account</option>
+                            <option value="21224">21224</option>
+                            <option value="14457">14457</option>
+                        </select>
+
+                        <!-- Table for Transactions -->
+                        <table id="transactionTable" style="display: none;">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionBody">
+                                <!-- Transaction rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+
+                        <script>
+                            function showTransactions() {
+                                // Get the selected account number
+                                var accountNumber = document.getElementById("accountNumber").value;
+
+                                // Hide the transaction table if no account is selected
+                                if (accountNumber === "") {
+                                    document.getElementById("transactionTable").style.display = "none";
+                                    return;
+                                }
+
+                                // Get the transaction body element
+                                var transactionBody = document.getElementById("transactionBody");
+
+                                // Clear any existing rows
+                                transactionBody.innerHTML = "";
+
+                                // Add the corresponding transactions based on the selected account number
+                                if (accountNumber === "21224") {
+                                    // Add transactions for account number 21224
+                                    addTransaction("2023-05-01", "Online Shopping", "EGP 1500.00");
+                                    addTransaction("2023-05-05", "Restaurant Bill", "EGP 800.00");
+                                    addTransaction("2023-05-10", "Grocery Shopping", "EGP 2800.00");
+                                } else if (accountNumber === "14457") {
+                                    // Add transactions for account number 14457
+                                    addTransaction("2023-05-02", "Utility Bill", "EGP 1200.00");
+                                    addTransaction("2023-05-07", "Travel Expenses", "EGP 2000.00");
+                                    addTransaction("2023-05-12", "Entertainment", "EGP 500.00");
+                                }
+
+                                // Show the transaction table
+                                document.getElementById("transactionTable").style.display = "table";
+                            }
+
+                            function addTransaction(date, description, amount) {
+                                // Create a new table row
+                                var newRow = document.createElement("tr");
+
+                                // Create table cells for date, description, and amount
+                                var dateCell = document.createElement("td");
+                                dateCell.textContent = date;
+                                var descriptionCell = document.createElement("td");
+                                descriptionCell.textContent = description;
+                                var amountCell = document.createElement("td");
+                                amountCell.textContent = amount;
+
+                                // Append the cells to the new row
+                                newRow.appendChild(dateCell);
+                                newRow.appendChild(descriptionCell);
+                                newRow.appendChild(amountCell);
+
+                                // Append the new row to the transaction body
+                                document.getElementById("transactionBody").appendChild(newRow);
+                            }
+                        </script>
+
+                        <br> </br>
+                        <br>
+                        <h3>Redeemable Points</h3>
+                        <div class="points" id="pointsLabel">5000</div>
+                        <input type="number" id="redeemPointsInput" placeholder="Enter points to redeem">
+                        <button onclick="decreasePoints()">Redeem</button>
+
+                        <script>
+                            function decreasePoints() {
+                                // Get the input value
+                                var redeemPointsInput = document.getElementById("redeemPointsInput");
+                                var pointsToRedeem = parseInt(redeemPointsInput.value);
+
+                                // Get the current points value
+                                var pointsLabel = document.getElementById("pointsLabel");
+                                var currentPoints = parseInt(pointsLabel.textContent);
+
+                                // Check if the input value is valid
+                                if (isNaN(pointsToRedeem) || pointsToRedeem <= 0 || pointsToRedeem > currentPoints) {
+                                    alert("Please enter a valid number of points to redeem.");
+                                    return;
+                                }
+
+                                // Decrease the points
+                                var newPoints = currentPoints - pointsToRedeem;
+                                pointsLabel.textContent = newPoints;
+
+                                // Perform any additional logic or actions here
+                                // ...
+
+                                // Optional: Reset the input value
+                                redeemPointsInput.value = "";
+                            }
+                        </script>
+
+                        </br>
+                        <br> </br>
+                        <br>
+                        <h4>Total due payments </h4>
+                        <div class="payments" id="paymentsLabel">20,000</div>
+                        <button type="button" class="payment-button" onclick="removeCreditCardPayments()">Pay fully</button>
+                        <button type="button" class="payment-button" onclick="showPaymentForm()">Pay partially</button>
+                        <form class="payment-form" id="paymentForm">
+                            <input type="number" class="payment-input" id="paymentInput" placeholder="Enter payment amount">
+                            <button type="button" class="payment-button" onclick="decreaseCreditCardPayments()">Submit</button>
+                        </form>
+                        <div class="payment-message" id="paymentMessage"></div>
+                        <script>
+                            function showPaymentForm() {
+                                document.getElementById('paymentForm').style.display = 'block'; // Show the payment form
+                            }
+
+                            function decreaseCreditCardPayments() {
+                                var totalDue = 500; // Total amount due, you can change this value
+                                var paymentInput = document.getElementById('paymentInput');
+                                var paymentAmount = parseFloat(paymentInput.value);
+
+                                if (isNaN(paymentAmount) || paymentAmount <= 0) {
+                                    // Show an error message if the entered payment amount is invalid
+                                    document.getElementById('paymentMessage').textContent = 'Please enter a valid payment amount.';
+                                } else if (paymentAmount > totalDue) {
+                                    // Show an error message if the entered payment amount exceeds the total due
+                                    document.getElementById('paymentMessage').textContent = 'Payment amount cannot exceed the total due amount.';
+                                } else {
+                                    // Process the payment and show a success message
+                                    var remainingDue = totalDue - paymentAmount;
+                                    document.getElementById('paymentMessage').textContent = 'Payment of $' + paymentAmount.toFixed(2) + ' successfully processed. Remaining due: $' + remainingDue.toFixed(2);
+                                }
+                            }
+                            function removeCreditCardPayments() {
+                                var paymentsLabel = document.getElementById('paymentsLabel');
+                                var currentPayments = parseInt(paymentsLabel.textContent);
+                                var updatedPayments = currentPayments - currentPayments;
+
+                                // Update the points label with the updated value
+                                paymentsLabel.textContent = updatedPayments.toString();
+                            }
+
+                            function decreaseCreditCardPayments() {
+                                var paymentsLabel = document.getElementById('paymentsLabel');
+                                var currentPayments = parseInt(paymentsLabel.textContent);
+                                var updatedPayments = currentPayments - 5000;
+
+                                // Update the points label with the updated value
+                                paymentsLabel.textContent = updatedPayments.toString();
+                            }
+
+                            function decreasePoints() {
+                                var pointsLabel = document.getElementById('pointsLabel');
+                                var currentPoints = parseInt(pointsLabel.textContent);
+                                var updatedPoints = currentPoints - 10;
+
+                                // Update the points label with the updated value
+                                pointsLabel.textContent = updatedPoints.toString();
+                            }
+                        </script>
+</div>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel
+        <!-- Quote End -->.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/JavaScript.js"></script>
+</body>
+
+</html>
