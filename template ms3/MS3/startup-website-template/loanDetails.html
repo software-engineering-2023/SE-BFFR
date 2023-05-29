@@ -131,7 +131,7 @@
 </div>
 
 <script>
-  function togglePayButton() {
+  /*function togglePayButton() {
     var accountNumber = document.getElementById('accountNumber').value;
     var payButton = document.getElementById('payButton');
 
@@ -166,7 +166,50 @@
             tableRow.parentNode.removeChild(tableRow);
         }
     }
+}*/
+
+function payLoan() {
+  var loanAmountElement = document.getElementById('loanAmount');
+  var loanAmountLeftElement = document.getElementById('loanAmountLeft');
+  var accountNumberSelect = document.getElementById('accountNumber');
+  var payButton = document.getElementById('payButton');
+
+  var loanAmount = parseFloat(loanAmountElement.innerText.replace('$', ''));
+  var loanAmountLeft = parseFloat(loanAmountLeftElement.innerText);
+  var paymentAmount = 1000;
+
+  if (paymentAmount > loanAmountLeft) {
+    alert('Payment amount exceeds the loan amount left.');
+    return;
+  }
+
+  var confirmation = confirm('Are you sure you want to make the payment?');
+
+  if (confirmation) {
+    loanAmountLeft -= paymentAmount;
+    loanAmountLeftElement.innerText = loanAmountLeft.toFixed(2);
+
+    if (loanAmountLeft === 0) {
+      var tableRow = loanAmountElement.parentNode.parentNode;
+      tableRow.parentNode.removeChild(tableRow);
+
+      payButton.style.display = 'none';
+      accountNumberSelect.style.display = 'none';
+    }
+  }
 }
+
+function togglePayButton() {
+  var accountNumber = document.getElementById('accountNumber').value;
+  var payButton = document.getElementById('payButton');
+
+  if (accountNumber === "") {
+    payButton.style.display = 'none';
+  } else {
+    payButton.style.display = 'block';
+  }
+}
+
 
 </script>
 

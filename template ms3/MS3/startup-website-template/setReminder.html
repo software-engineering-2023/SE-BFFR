@@ -82,6 +82,10 @@
                             </div>
                             </br>
                             <div class="col-12">
+                                <input type="number" id="billNumber" class="form-control bg-light border-0" placeholder="Bill Number" style="height: 55px;" required>
+                            </div>
+                            <br/>
+                            <div class="col-12">
                                 <select id="accountType" class="form-select bg-light border-0" style="height: 55px;" required>
                                     <option selected disabled>Bill Type</option>
                                     <option value="1">Gas</option>
@@ -118,12 +122,13 @@
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); 
                                     var reminderDate = document.getElementById("dateInput").value;
+                                    var billNumber = document.getElementById("billNumber").value;
                                     var billType = document.getElementById("accountType").value;
                                     var amount = document.getElementById("amount").value;
                                     var dueDate = document.getElementById("dueDateInput").value;
     
                                     
-                                    if (reminderDate === "" || billType === "" || amount === "" || dueDate === "") {
+                                    if (reminderDate === "" || billNumber === "" || billType === "" || amount === "" || dueDate === "") {
                                         
                                         errorMessage.style.display = "block"; 
                                     } else {
