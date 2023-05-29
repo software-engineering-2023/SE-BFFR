@@ -28,8 +28,87 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .notification-bell {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .notification-bell-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #f2f2f2;
+            border-radius: 50%;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        .notification-list {
+            position: absolute;
+            top: -220px;
+            right: 0;
+            width: 250px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            z-index: 999;
+        }
+
+        .notification-item {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
+    <!-- Notification Container -->
+    <div class="notification-container">
+        <!-- Notification Bell -->
+        <div class="notification-bell" onclick="showNotificationList()">
+            <div class="notification-bell-icon" style="background-image: url('bell.png'); background-size: cover; background-position: center;"></div>
+            <span class="notification-count">3</span>
+        </div>
+
+        <!-- Notification List -->
+        <div class="notification-list" id="notificationList">
+            <b>Notification:</b>
+            <div class="notification-item">A new Credit Card Application has been submitted </div>
+            <b>Notification:</b>
+            <div class="notification-item">Have a certificate now at 8% interest!</div>
+            <b>Notification:</b>
+            <div class="notification-item"> A new Loan Application has been submitted</div>
+        </div>
+    </div>
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -63,7 +142,7 @@
                                     <th>Request ID</th>
                                     <th>Account Number</th>
                                     <th>Description</th>
-                                    <th>Action</th> 
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,7 +152,7 @@
                                     <td>applying for loan</td>
                                     <td>
                                         <button class="btn btn-primary button-link" onclick="ViewLoanDetails1()">View Details</button>
-                                        
+
                                     </td>
                                 </tr>
 
@@ -82,7 +161,7 @@
                                     <td>58947</td>
                                     <td>applying for loan</td>
                                     <td>
-                                        <button class="btn btn-primary button-link" onclick ="ViewLoanDetails2()">View Details</button>
+                                        <button class="btn btn-primary button-link" onclick="ViewLoanDetails2()">View Details</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -162,27 +241,42 @@
 
                             </div>
                             <Script>
-                                function ViewLoanDetails1(){
+                                function ViewLoanDetails1() {
                                     window.location.href = "viewLoanDetails1.html"
                                 }
-                                function ViewLoanDetails2(){
+                                function ViewLoanDetails2() {
                                     window.location.href = "viewLoanDetails2.html"
                                 }
-                                function ViewFirstCreditCradDetails(){
+                                function ViewFirstCreditCradDetails() {
                                     window.location.href = "viewCreditCardDetails.html"
                                 }
-                                function ViewSecondCreditCardDetails(){
+                                function ViewSecondCreditCardDetails() {
                                     window.location.href = "viewCreditCardDetails2.html"
                                 }
-                                function viewReportIssue(){
+                                function viewReportIssue() {
                                     window.location.href = "viewReportIssue.html"
                                 }
-                                function viewReportIssue1(){
+                                function viewReportIssue1() {
                                     window.location.href = "viewReportIssue1.html"
+                                }
+                                function showNotificationList() {
+                                    var notificationList = document.getElementById("notificationList");
+                                    if (notificationList.style.display === "none") {
+                                        // Calculate the position of the notification list based on the bell's position
+                                        var bellPosition = document.querySelector(".notification-bell").getBoundingClientRect();
+                                        var notificationListHeight = notificationList.offsetHeight;
+                                        var notificationListTop = bellPosition.top - notificationListHeight;
+
+                                        // Update the position and display of the notification list
+                                        notificationList.style.top = notificationListTop + "px";
+                                        notificationList.style.display = "block";
+                                    } else {
+                                        notificationList.style.display = "none";
+                                    }
                                 }
                             </Script>
                         </b>
-</div>
+                </div>
             </div>
         </div>
     </div>
