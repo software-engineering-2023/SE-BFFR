@@ -111,6 +111,11 @@
             </div>
             <br />
             <div class="col-12">
+                <style>
+                    label[for="policeReportInput"] {
+                        color: white;
+                    }
+                </style>
                 <label for="policeReportInput">If you have filed a police report regarding the theft, loss, or damage, please provide the reference number of the report. If not, just type "None".</label>
                 <input id="policeReportInput" type="text" class="form-control bg-light border-0" placeholder="Police report or incident reference number" style="height: 55px;">
             </div>
@@ -131,6 +136,7 @@
 
             <!-- Submit button -->
             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+            <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
 
             <!-- JavaScript -->
             <script>
@@ -153,8 +159,9 @@
 
                     if (fullName === "" || creditcardNumber===""|| accountNumber === "" || phoneNumber === "" || dateInput === "" || emailInput === "" || locationInput === "" || issueDescription ==="") {
                         // Display error message
-                        window.alert("Please fill in all required fields.");
-                    } else {
+                        errorMessage.style.display = "block"; // Show the error message
+                                    } else {
+                                        errorMessage.style.display = "none"; // Hide the error message
                         // Show the success message as an alert box
                         window.alert("Your Report Is sent Successfully!");
 

@@ -64,6 +64,7 @@
                           <a href="first.html" class="btn btn-primary button-link ml-2">Back</a>
                         </div>
                       </div>
+                      <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                     </form>
                   </div>
                   
@@ -91,7 +92,7 @@
                 window.location.href = "bankerView.html";
             } else if (users.admin.username === username && users.admin.password === password) {
                 window.location.href = "adminView.html";
-            } else {
+            } else  {
                 alert("Invalid username or password");
             }
         }
