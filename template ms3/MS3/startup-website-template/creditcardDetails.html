@@ -216,59 +216,71 @@
         }
     
         function redeemPoints() {
-            // Get the input value
-            var redeemPointsInput = document.getElementById("redeemPointsInput");
-            var pointsToRedeem = parseInt(redeemPointsInput.value);
+    // Get the input value
+    var redeemPointsInput = document.getElementById("redeemPointsInput");
+    var pointsToRedeem = parseInt(redeemPointsInput.value);
+
+    // Get the current points value
+    var pointsLabel = document.getElementById("pointsLabel");
+    var currentPoints = parseInt(pointsLabel.textContent);
+
+    // Check if the input value is valid
+    if (isNaN(pointsToRedeem) || pointsToRedeem <= 0 || pointsToRedeem > currentPoints) {
+        alert("Please enter a valid number of points to redeem.");
+        return;
+    }
+
+    // Ask for confirmation
+    var confirmation = confirm("Are you sure you want to redeem the points?");
+
+    // Check user's choice
+    if (confirmation) {
+        // Decrease the points
+        var newPoints = currentPoints - pointsToRedeem;
+        pointsLabel.textContent = newPoints;
+
+        // Perform any additional logic or actions here
+        // ...
+    } else {
+        // User chose not to redeem points, do nothing
+    }
+
+    // Optional: Reset the input value
+    redeemPointsInput.value = "";
+}
+
     
-            // Get the current points value
-            var pointsLabel = document.getElementById("pointsLabel");
-            var currentPoints = parseInt(pointsLabel.textContent);
-    
-            // Check if the input value is valid
-            if (isNaN(pointsToRedeem) || pointsToRedeem <= 0 || pointsToRedeem > currentPoints) {
-                alert("Please enter a valid number of points to redeem.");
-                return;
-            }
-    
-            // Decrease the points
-            var newPoints = currentPoints - pointsToRedeem;
-            pointsLabel.textContent = newPoints;
-    
-            // Perform any additional logic or actions here
-            // ...
-    
-            // Optional: Reset the input value
-            redeemPointsInput.value = "";
-        }
-    
-        function payFully() {
-            var paymentsLabel = document.getElementById("paymentsLabel");
-            var currentPayments = parseInt(paymentsLabel.textContent);
-            var updatedPayments = currentPayments - currentPayments;
-    
-            // Update the payments label with the updated value
-            paymentsLabel.textContent = updatedPayments.toString();
-        }
-    
-        function payPartially() {
-            document.getElementById("paymentForm").style.display = "block"; // Show the payment form
-        }
-    
-        function submitPayment() {
-            var totalDue = parseInt(document.getElementById("paymentsLabel").textContent);
-            var paymentInput = parseInt(document.getElementById("paymentInput").value);
-    
-            if (isNaN(paymentInput) || paymentInput <= 0 || paymentInput > totalDue) {
-                document.getElementById("paymentMessage").textContent = "Please enter a valid payment amount.";
-                return;
-            }
-    
-            var remainingDue = totalDue - paymentInput;
-            document.getElementById("paymentsLabel").textContent = remainingDue.toString();
-            document.getElementById("paymentForm").style.display = "none"; // Hide the payment form
-            document.getElementById("paymentMessage").textContent = ""; // Clear the payment message
-            document.getElementById("paymentInput").value = ""; // Reset the payment input value
-        }
+function payFully() {
+    var confirmation = confirm("Are you sure you want to pay the full amount?");
+    if (confirmation) {
+        var paymentsLabel = document.getElementById("paymentsLabel");
+        paymentsLabel.textContent = "0";
+    }
+}
+
+function payPartially() {
+    document.getElementById("paymentForm").style.display = "block"; // Show the payment form
+}
+
+function submitPayment() {
+    var totalDue = parseInt(document.getElementById("paymentsLabel").textContent);
+    var paymentInput = parseInt(document.getElementById("paymentInput").value);
+
+    if (isNaN(paymentInput) || paymentInput <= 0 || paymentInput > totalDue) {
+        document.getElementById("paymentMessage").textContent = "Please enter a valid payment amount.";
+        return;
+    }
+
+    var confirmation = confirm("Are you sure you want to submit the payment?");
+    if (confirmation) {
+        var remainingDue = totalDue - paymentInput;
+        document.getElementById("paymentsLabel").textContent = remainingDue.toString();
+        document.getElementById("paymentForm").style.display = "none"; // Hide the payment form
+        document.getElementById("paymentMessage").textContent = ""; // Clear the payment message
+        document.getElementById("paymentInput").value = ""; // Reset the payment input value
+    }
+}
+
     </script>
     
     
