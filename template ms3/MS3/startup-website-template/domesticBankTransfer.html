@@ -130,6 +130,7 @@
                 
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
+                            <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
                             <!-- JavaScript -->
                             <script>
@@ -171,9 +172,10 @@
                                         transactionPurposeInput.value === "" ||
                                         transactionDescriptionInput.value === ""
                                     ) {
-                                        // Show an error message for empty fields
-                                        window.alert("Please fill in all the fields.");
+                                        // Display an error message if any field is empty
+                                        errorMessage.style.display = "block"; // Show the error message
                                     } else {
+                                        errorMessage.style.display = "none"; // Hide the error message
                                         // Show the success message as an alert box
                                         window.alert("Your Transfer is Done Successfully!");
                 

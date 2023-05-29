@@ -134,6 +134,7 @@
                 
                             <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+                            <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
                             <!-- JavaScript -->
                             <script>
@@ -175,11 +176,11 @@
                                         username === "" ||
                                         password === "" ||
                                         confirmPassword === ""
-                                    ) {
-                                        // Display error message
-                                        window.alert("Please fill in all required fields.");
+                                    ){
+                                        // Display an error message if any field is empty
+                                        errorMessage.style.display = "block"; // Show the error message
                                     } else {
-                                        // Show the success message as an alert box
+                                        errorMessage.style.display = "none"; // Hide the error message
                                         window.alert("You Signed Up Successfully!");
                 
                                         // Redirect to the home page (replace "Htmlpage.html" with the actual home page URL)
