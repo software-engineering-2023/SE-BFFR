@@ -44,7 +44,7 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr@gmail.com</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr.team@gmail.com</small>
                 </div>
             </div>
         </div>
@@ -89,82 +89,89 @@
                     </style>
                     <b>
                         <h2>Loan Payment</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Loan Amount</th>
-                                    <th>Interest Rate</th>
-                                    <th>Loan Term</th>
-                                    <th>Monthly Payment</th>
-                                    <th>Loan Amount Left</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td id="loanAmount">$50000.00</td>
-                                    <td>5.5%</td>
-                                    <td>60 Months</td>
-                                    <td>$1000</td>
-                                    <td id="loanAmountLeft">48000.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button onclick="payLoan()">Pay</button>
 
-                        </table>
-                        
+<!-- Bank Account Number Selection -->
 
 
-                        </tbody>
-                        </table>
-                        <br>
-                        </br>
-                        <br>
-                        </br>
+<!-- Loan Details Table -->
+<table id="loanTable">
+  <thead>
+    <tr>
+      <th>Loan Amount</th>
+      <th>Interest Rate</th>
+      <th>Loan Term</th>
+      <th>Monthly Payment</th>
+      <th>Loan Amount Left</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="loanAmount">$50000.00</td>
+      <td>5.5%</td>
+      <td>60 Months</td>
+      <td>$1000</td>
+      <td id="loanAmountLeft">48000.00</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<select id="accountNumber" onchange="togglePayButton()">
+    <option value="">Select Account Number to Pay</option>
+    <option value="21224">21224</option>
+    <option value="14457">14457</option>
+  </select>
 
+<!-- Pay Button (Initially hidden) -->
+<button id="payButton" onclick="payLoan()" style="display: none;">Pay</button>
 
-                        <br>
-                        </br>
-                        <br>
-                        <div class="button-container">
-                            <a href="services.html" class="btn btn-primary button-link">Back</a>
-                            
+<br><br>
 
-                        </div>
-                        </br>
+<div class="button-container">
+  <a href="services.html" class="btn btn-primary button-link">Back</a>
+</div>
 
-                        <script>
-                            function payLoan() {
-                                var loanAmountElement = document.getElementById('loanAmount');
-                                var loanAmountLeftElement = document.getElementById('loanAmountLeft');
+<script>
+  function togglePayButton() {
+    var accountNumber = document.getElementById('accountNumber').value;
+    var payButton = document.getElementById('payButton');
 
-                                var loanAmount = parseFloat(loanAmountElement.innerText.replace('$', ''));
-                                var loanAmountLeft = parseFloat(loanAmountLeftElement.innerText);
-                                var paymentAmount = 1000;
+    if (accountNumber === "") {
+      payButton.style.display = 'none';
+    } else {
+      payButton.style.display = 'block';
+    }
+  }
 
-                                if (paymentAmount > loanAmountLeft) {
-                                    alert('Payment amount exceeds the loan amount left.');
-                                    return;
-                                }
+  function payLoan() {
+    var loanAmountElement = document.getElementById('loanAmount');
+    var loanAmountLeftElement = document.getElementById('loanAmountLeft');
 
-                                loanAmountLeft -= paymentAmount;
-                                loanAmountLeftElement.innerText = loanAmountLeft.toFixed(2);
+    var loanAmount = parseFloat(loanAmountElement.innerText.replace('$', ''));
+    var loanAmountLeft = parseFloat(loanAmountLeftElement.innerText);
+    var paymentAmount = 1000;
 
-                                if (loanAmountLeft === 0) {
-                                    // Remove the table row if the loan amount left is zero
-                                    var tableRow = loanAmountElement.parentNode;
-                                    tableRow.parentNode.removeChild(tableRow);
-                                }
-                            }
+    if (paymentAmount > loanAmountLeft) {
+      alert('Payment amount exceeds the loan amount left.');
+      return;
+    }
 
+    loanAmountLeft -= paymentAmount;
+    loanAmountLeftElement.innerText = loanAmountLeft.toFixed(2);
 
-                        </script>
-                        <style>
-                            .button-link {
-                                display: inline-block;
-                                margin-right: 10px;
-                            }
-                        </style>
+    if (loanAmountLeft === 0) {
+      // Remove the table row if the loan amount left is zero
+      var tableRow = loanAmountElement.parentNode;
+      tableRow.parentNode.removeChild(tableRow);
+    }
+  }
+</script>
+
+<style>
+  .button-link {
+    display: inline-block;
+    margin-right: 10px;
+  }
+</style>
 
 
 
