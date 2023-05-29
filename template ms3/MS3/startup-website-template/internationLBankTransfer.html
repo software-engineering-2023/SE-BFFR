@@ -139,59 +139,69 @@
                 
                             <!-- JavaScript -->
                             <script>
-                                // Get a reference to the submit button
-                                var submitButton = document.getElementById("submitButton");
-                
-                                // Add an event listener to the submit button
-                                submitButton.addEventListener("click", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                
-                                    // Get input field values
-                                    var bankName = document.getElementById("bankName").value;
-                                    var bankCountry = document.getElementById("bankCountry").value;
-                                    var bankCity = document.getElementById("bankCity").value;
-                                    var bankAddress = document.getElementById("bankAddress").value;
-                                    var bankCode = document.getElementById("bankCode").value;
-                                    var beneficiaryFirstName = document.getElementById("beneficiaryFirstName").value;
-                                    var beneficiaryMiddleName = document.getElementById("beneficiaryMiddleName").value;
-                                    var beneficiaryLastName = document.getElementById("beneficiaryLastName").value;
-                                    var beneficiaryAccountNumber = document.getElementById("beneficiaryAccountNumber").value;
-                                    var accountNumber = document.getElementById("accountNumber").value;
-                                    var amount = document.getElementById("amount").value;
-                                    var currency = document.getElementById("currency").value;
-                                    var transactionDate = document.getElementById("dateInput").value;
-                                    var transactionPurpose = document.getElementById("transactionPurpose").value;
-                                    var transactionDescription = document.getElementById("transactionDescription").value;
-                
-                                    // Check if any field is empty
-                                    if (
-                                        !bankName ||
-                                        !bankCountry ||
-                                        !bankCity ||
-                                        !bankAddress ||
-                                        !bankCode ||
-                                        !beneficiaryFirstName ||
-                                        !beneficiaryMiddleName ||
-                                        !beneficiaryLastName ||
-                                        !beneficiaryAccountNumber ||
-                                        !accountNumber ||
-                                        !amount ||
-                                        !currency ||
-                                        !transactionDate ||
-                                        !transactionPurpose ||
-                                        !transactionDescription
-                                    ) {
-                                        // Display an error message if any field is empty
-                                        errorMessage.style.display = "block"; // Show the error message
-                                    } else {
-                                        errorMessage.style.display = "none"; // Hide the error message
-                                        // Show the success message as an alert box
-                                        window.alert("Your Transfer is Done Successfully!");
-                
-                                        // Redirect to the home page (replace "home.html" with the actual home page URL)
-                                        window.location.href = "services.html";
-                                    }
-                                });
+                               // Get a reference to the submit button
+var submitButton = document.getElementById("submitButton");
+
+// Add an event listener to the submit button
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission (adjust if needed)
+
+    // Get input field values
+    var bankName = document.getElementById("bankName").value;
+    var bankCountry = document.getElementById("bankCountry").value;
+    var bankCity = document.getElementById("bankCity").value;
+    var bankAddress = document.getElementById("bankAddress").value;
+    var bankCode = document.getElementById("bankCode").value;
+    var beneficiaryFirstName = document.getElementById("beneficiaryFirstName").value;
+    var beneficiaryMiddleName = document.getElementById("beneficiaryMiddleName").value;
+    var beneficiaryLastName = document.getElementById("beneficiaryLastName").value;
+    var beneficiaryAccountNumber = document.getElementById("beneficiaryAccountNumber").value;
+    var accountNumber = document.getElementById("accountNumber").value;
+    var amount = document.getElementById("amount").value;
+    var currency = document.getElementById("currency").value;
+    var transactionDate = document.getElementById("dateInput").value;
+    var transactionPurpose = document.getElementById("transactionPurpose").value;
+    var transactionDescription = document.getElementById("transactionDescription").value;
+
+    // Check if any field is empty
+    if (
+        !bankName ||
+        !bankCountry ||
+        !bankCity ||
+        !bankAddress ||
+        !bankCode ||
+        !beneficiaryFirstName ||
+        !beneficiaryMiddleName ||
+        !beneficiaryLastName ||
+        !beneficiaryAccountNumber ||
+        !accountNumber ||
+        !amount ||
+        !currency ||
+        !transactionDate ||
+        !transactionPurpose ||
+        !transactionDescription
+    ) {
+        // Display an error message if any field is empty
+        errorMessage.style.display = "block"; // Show the error message
+        return;
+    }
+
+    // Show a confirmation message
+    var confirmed = confirm("Are you sure you want to proceed with the transfer?");
+    if (!confirmed) {
+        return;
+    }
+
+    // Hide the error message
+    errorMessage.style.display = "none";
+
+    // Show the success message as an alert box
+    window.alert("Your Transfer is Done Successfully!");
+
+    // Redirect to the home page (replace "home.html" with the actual home page URL)
+    window.location.href = "services.html";
+});
+
                             </script>
                         </form>
                     </div>
