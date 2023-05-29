@@ -105,10 +105,13 @@
                             <label for="removeRadio">Remove</label>
                             <input type="radio" id="blockRadio" name="radioGroup" value="block">
                             <label for="blockRadio">Block</label>
+                            <input type="radio" id="blockRadio" name="radioGroup" value="Unblock">
+                            <label for="blockRadio">Unblock</label>
                             <br><br>
                             <input type="text" id="usernameInput" placeholder="Username" required><br><br>
                             <input type="text" id="passwordInput" placeholder="Password" required><br><br>
                             <button class="btn btn-primary button-link" onclick="performAction()">Perform</button>
+                            <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                           </div>
                         <br>
                         <button id="manageActivityButton" class="btn btn-primary button-link" onclick="toggleTextboxes()">Manage users activity</button>
@@ -150,10 +153,12 @@
         var password = document.getElementById("passwordInput").value;
     
         if (!userRole || !selectedAction || !username || !password) {
-         alert("Please fill in all required fields.");
-         return;
+         errorMessage.style.display = "block"; // Show the error message
          }
-        alert("Action performed successfully!");
+        else{
+            errorMessage.style.display = "none"; // Hide the error message
+            alert("Action performed successfully!");
+        }
         }
   
         function getSelectedAction() {
