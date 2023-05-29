@@ -81,7 +81,88 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
+                        <style>
+                            .notification-container {
+                                position: fixed;
+                                top: 20px;
+                                right: 20px;
+                            }
+                    
+                            .notification-bell {
+                                position: relative;
+                                display: inline-block;
+                                width: 24px;
+                                height: 24px;
+                                cursor: pointer;
+                            }
+                    
+                            .notification-bell-icon {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 100%;
+                                background-color: #f2f2f2;
+                                border-radius: 50%;
+                            }
+                    
+                            .notification-count {
+                                position: absolute;
+                                top: -8px;
+                                right: -8px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 16px;
+                                height: 16px;
+                                background-color: red;
+                                color: #fff;
+                                font-size: 10px;
+                                font-weight: bold;
+                                border-radius: 50%;
+                            }
+                    
+                            /* Notification List */
+                            .notification-list {
+                                position: absolute;
+                                top: 40px;
+                                right: 0;
+                                width: 250px;
+                                background-color: #f2f2f2;
+                                padding: 10px;
+                                border-radius: 4px;
+                                display: none;
+                            }
+                    
+                            .notification-item {
+                                margin-bottom: 10px;
+                                padding: 5px;
+                                border-bottom: 1px solid #ccc;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <!-- Notification Container -->
+                        <div class="notification-container">
+                            <!-- Notification Bell -->
+                            <div class="notification-bell" onclick="showNotificationList()">
+                                <div class="notification-bell-icon" style="background-image: url('bell.png'); background-size: cover; background-position: center;"></div>
+                                <span class="notification-count">4</span>
+                            </div>
+                            
+                            <!-- Notification List -->
+                            <div class="notification-list" id="notificationList">
+                                <b>Notification:</b>
+                                <div class="notification-item">Your credit card issue has been reviewed and resolved</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">Have a certificate now at 8% interest!</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">Your technical issue has been resolved, check it now</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">You can know redeem your points at Vodafone!</div>
+                            </div>
+                        </div>
                 </div>
             </nav>
         </div>
@@ -325,7 +406,17 @@
         } else {
             reminderdropdown.style.display = "none";
         }
-    });</script>
+    });
+    function showNotificationList() {
+            var notificationList = document.getElementById("notificationList");
+            
+            if (notificationList.style.display === "none") {
+                notificationList.style.display = "block";
+            } else {
+                notificationList.style.display = "none";
+            }
+        }
+    </script>
 <!-- Service End -->
 <!-- Vendor End -->
 <!-- Footer End -->
