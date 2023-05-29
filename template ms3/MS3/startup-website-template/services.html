@@ -29,6 +29,73 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <head>
+        <!-- ... -->
+        <style>
+            .notification-container {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+            }
+    
+            .notification-bell {
+                position: relative;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+            }
+    
+            .notification-bell-icon {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                background-color: #f2f2f2;
+                border-radius: 50%;
+            }
+    
+            .notification-count {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16px;
+                height: 16px;
+                background-color: red;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                border-radius: 50%;
+            }
+    
+            /* Notification List */
+            .notification-list {
+                position: absolute;
+                top: -220px;
+                right: 0;
+                width: 250px;
+                background-color: #f2f2f2;
+                padding: 10px;
+                border-radius: 4px;
+                display: none;
+                z-index: 999;
+            }
+    
+            .notification-item {
+                margin-bottom: 10px;
+                padding: 5px;
+                border-bottom: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    
 </head>
 
 <body>
@@ -53,7 +120,7 @@
         <!-- Navbar Start -->
        
                         <style>
-                            .notification-container {
+                            /*.notification-container {
                                 position: fixed;
                                 top: 20px;
                                 right: 20px;
@@ -94,8 +161,8 @@
                                 border-radius: 50%;
                             }
                     
-                            /* Notification List */
-                            .notification-list {
+                            *//* Notification List */
+                           /* .notification-list {
                                 position: absolute;
                                 top: 40px;
                                 right: 0;
@@ -111,7 +178,7 @@
                                 padding: 5px;
                                 border-bottom: 1px solid #ccc;
                             }
-                        </style>
+                        </style>*/
                     
                     
                         <!-- Notification Container -->
@@ -383,15 +450,24 @@
             reminderdropdown.style.display = "none";
         }
     });
+
+    // Show or hide the notification list
     function showNotificationList() {
-            var notificationList = document.getElementById("notificationList");
-            
-            if (notificationList.style.display === "none") {
-                notificationList.style.display = "block";
-            } else {
-                notificationList.style.display = "none";
-            }
+        var notificationList = document.getElementById("notificationList");
+        if (notificationList.style.display === "none") {
+            // Calculate the position of the notification list based on the bell's position
+            var bellPosition = document.querySelector(".notification-bell").getBoundingClientRect();
+            var notificationListHeight = notificationList.offsetHeight;
+            var notificationListTop = bellPosition.top - notificationListHeight;
+
+            // Update the position and display of the notification list
+            notificationList.style.top = notificationListTop + "px";
+            notificationList.style.display = "block";
+        } else {
+            notificationList.style.display = "none";
         }
+    }
+
     </script>
 
 <!-- Service End -->
