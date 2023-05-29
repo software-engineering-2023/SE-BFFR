@@ -50,7 +50,7 @@
                         
                         th {
                             background-color: #f2f2f2;
-                            text-align: center; /* Center-align table header titles */
+                            text-align: center; 
                         }
                     </style>
                     <h2>Application Details</h2>
@@ -77,13 +77,10 @@
                                 <td>EGP 10,000</td>
                                 <td>Car</td>
                                 <td>
-                                    <!-- Add buttons for each row -->
                                     <button id= "AcceptButton" class="btn btn-primary button-link" type="Accept">Accept</button>
                                     <button id= "RejectButton" class="btn btn-primary button-link" type="Reject">Reject</button>
-                                    <a href="#" class="btn btn-primary button-link" onclick="toggleTable()">Account Details</a>
-                                </td>
+                                    <a href="#" class="btn btn-primary button-link" onclick="toggleTable(event)">Account Details</a>
                             </tr>
-                            <!-- Add more transaction rows here -->
                         </tbody>
                     </table>
                 <br>
@@ -102,46 +99,51 @@
                                 <td>58947</td>
                                 <td>EGP 1,000,000</td>
                             </tr>
-                            <!-- Add more transaction rows here -->
                         </tbody>
 
                     </table>
                     <br>
                  </div>
                     
-                    <script>
-                        function toggleTable() {
-                        var table = document.getElementById("clientTransactions");
-                        if (table.style.display === "none") {
-                            table.style.display = "block";
-                        } else {
-                            table.style.display = "none";
-                        }
-                    }
-                    var AcceptButton = document.getElementById("AcceptButton");
-                    // Add an event listener to the submit button
-                    AcceptButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("credit card application has been accepted succefully!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
+             <script>
+            function toggleTable(event) {
+            event.preventDefault(); 
+            var table = document.getElementById("clientTransactions");
+            var button = event.target; 
+            if (table.style.display === "none") {
+            table.style.display = "block";
+            button.innerHTML = "Hide Account Details"; 
+            } 
+            else {
+            table.style.display = "none";
+            button.innerHTML = "Account Details"; 
+               }
+          }
 
-                // Get a reference to the submit button
-                var RejectButton = document.getElementById("RejectButton");
-                    // Add an event listener to the submit button
-                    RejectButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("credit card application has been rejected!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
-                    </script>
+           var acceptButton = document.getElementById("AcceptButton");
+           acceptButton.addEventListener("click", function (event) {
+           event.preventDefault();
+           var row = this.closest("tr");
+           if (row) {
+           row.remove();
+                   }
+            alert("Credit card application has been accepted successfully!");
+            });
+
+           var rejectButton = document.getElementById("RejectButton");
+           rejectButton.addEventListener("click", function (event) {
+           event.preventDefault();
+           var row = this.closest("tr");
+           if (row) {
+             row.remove();
+           }
+           alert("Credit card application has been rejected!");
+           });
+
+                    
+        </script>
 
                <a href="bankerView.html" class="btn btn-primary button-link">Back</a>
-               <a href="first.html" class="btn btn-primary button-link">Home</a>
                 </div>
             </div>
         </div>

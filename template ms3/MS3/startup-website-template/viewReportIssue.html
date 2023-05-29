@@ -76,7 +76,6 @@
                                 <td>Maadi</td>
                                 <td>Loss of credit card</td>
                                 <td>
-                                    <!-- Add buttons for each row -->
                                     <button id= "deactivate" class="btn btn-primary button-link" type="deactivate">Deactivate credit activity </button>
                                     <button id= "restore" class="btn btn-primary button-link" type="restore">Restore extra amount </button>
                                 </td>
@@ -86,29 +85,23 @@
                     </br>
                     </br>
                     <a href="bankerView.html" class="btn btn-primary button-link">Back</a>
-                    <a href="first.html" class="btn btn-primary button-link">Home</a>
-                <script>
-                    var deactivate = document.getElementById("deactivate");
-                    // Add an event listener to the submit button
-                    deactivate.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("credit card issue resolved!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
+        <script>
+        var deactivate = document.getElementById("deactivate");
+        deactivate.addEventListener("click", function (event) {
+        event.preventDefault();
+         var row = this.closest("tr");
+         row.remove();
+        window.alert("Credit card issue resolved!");
+}      );
 
-                // Get a reference to the submit button
-                var restore = document.getElementById("restore");
-                    // Add an event listener to the submit button
-                    restore.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("credit card issue resolved!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
-            </script>
+       var restore = document.getElementById("restore");
+       restore.addEventListener("click", function (event) {
+       event.preventDefault();
+       var row = this.closest("tr");
+       row.remove();
+       window.alert("Credit card issue resolved!");
+    });
+    </script>
                      </div>
                  </div>
              </div>

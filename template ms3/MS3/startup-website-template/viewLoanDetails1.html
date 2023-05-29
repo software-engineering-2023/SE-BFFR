@@ -76,13 +76,11 @@
                                 <td>EGP 15,000</td>
                                 <td>Personal</td>
                                 <td>
-                                    <!-- Add buttons for each row -->
                                     <button id= "AcceptButton" class="btn btn-primary button-link" type="Accept">Accept</button>
                                     <button id= "RejectButton" class="btn btn-primary button-link" type="Reject">Reject</button>
-                                    <a href="#" class="btn btn-primary button-link" onclick="toggleTable()">Account Details</a>
+                                    <a href="#" class="btn btn-primary button-link" onclick="toggleTable(event)">Account Details</a>
                                 </td>
                             </tr>
-                            <!-- Add more transaction rows here -->
                         </tbody>
                     </table>
                 </br>
@@ -100,48 +98,50 @@
                                 <td>123455</td>
                                 <td>EGP 2,000,000</td>
                             </tr>
-                            <!-- Add more transaction rows here -->
                         </tbody>
 
                     </table>
                     <br>
                  </div>
                     
-                    <script>
-                        function toggleTable() {
-                        var table = document.getElementById("clientTransactions");
-                        if (table.style.display === "none") {
-                            table.style.display = "block";
-                        } else {
-                            table.style.display = "none";
-                        }
+                <script>
+                    function toggleTable(event) {
+                    event.preventDefault(); 
+                    var table = document.getElementById("clientTransactions");
+                    var button = event.target; 
+                    if (table.style.display === "none") {
+                      table.style.display = "block";
+                      button.innerHTML = "Hide Account Details";
+                     } 
+                    else {
+                      table.style.display = "none";
+                      button.innerHTML = "Account Details"; 
+                     }
                     }
 
-                    // Get a reference to the submit button
-                    var AcceptButton = document.getElementById("AcceptButton");
-                    // Add an event listener to the submit button
-                    AcceptButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("Loan has been accepted succefully!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
+                       
+                       var acceptButton = document.getElementById("AcceptButton");
+                       acceptButton.addEventListener("click", function (event) {
+                       event.preventDefault();
+                       var row = this.closest("tr");
+                       if (row) {
+                         row.remove();
+                        }
+                        alert("Loan has been accepted successfully!");
+                        });
 
-                // Get a reference to the submit button
-                var RejectButton = document.getElementById("RejectButton");
-                    // Add an event listener to the submit button
-                    RejectButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                    // Show the success message as an alert box
-                    window.alert("Loan has been rejected!");
-                   // Redirect to the home page (replace "home.html" with the actual home page URL)
-                   window.location.href = "bankerView.html";
-                });
-                    </script>
+                        var rejectButton = document.getElementById("RejectButton");
+                        rejectButton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        var row = this.closest("tr");
+                        if (row) {
+                          row.remove();
+                                 }
+                        alert("Loan has been rejected!");
+                        });
+                   </script>
 
                <a href="bankerView.html" class="btn btn-primary button-link">Back</a>
-               <a href="first.html" class="btn btn-primary button-link">Home</a>
                </div>
             </div>
         </div>

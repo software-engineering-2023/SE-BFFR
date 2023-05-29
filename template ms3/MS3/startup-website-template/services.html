@@ -39,6 +39,106 @@
     <!-- Spinner End -->
     <!-- Topbar Start -->
    
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr.team@gmail.com</small>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+        <!-- Navbar Start -->
+       
+                        <style>
+                            .notification-container {
+                                position: fixed;
+                                top: 20px;
+                                right: 20px;
+                            }
+                    
+                            .notification-bell {
+                                position: relative;
+                                display: inline-block;
+                                width: 24px;
+                                height: 24px;
+                                cursor: pointer;
+                            }
+                    
+                            .notification-bell-icon {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: 100%;
+                                background-color: #f2f2f2;
+                                border-radius: 50%;
+                            }
+                    
+                            .notification-count {
+                                position: absolute;
+                                top: -8px;
+                                right: -8px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 16px;
+                                height: 16px;
+                                background-color: red;
+                                color: #fff;
+                                font-size: 10px;
+                                font-weight: bold;
+                                border-radius: 50%;
+                            }
+                    
+                            /* Notification List */
+                            .notification-list {
+                                position: absolute;
+                                top: 40px;
+                                right: 0;
+                                width: 250px;
+                                background-color: #f2f2f2;
+                                padding: 10px;
+                                border-radius: 4px;
+                                display: none;
+                            }
+                    
+                            .notification-item {
+                                margin-bottom: 10px;
+                                padding: 5px;
+                                border-bottom: 1px solid #ccc;
+                            }
+                        </style>
+                    
+                    
+                        <!-- Notification Container -->
+                        <div class="notification-container">
+                            <!-- Notification Bell -->
+                            <div class="notification-bell" onclick="showNotificationList()">
+                                <div class="notification-bell-icon" style="background-image: url('bell.png'); background-size: cover; background-position: center;"></div>
+                                <span class="notification-count">4</span>
+                            </div>
+                            
+                            <!-- Notification List -->
+                            <div class="notification-list" id="notificationList">
+                                <b>Notification:</b>
+                                <div class="notification-item">Your credit card issue has been reviewed and resolved</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">Have a certificate now at 8% interest!</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">Your technical issue has been resolved, check it now</div>
+                                <b>Notification:</b>
+                                <div class="notification-item">You can know redeem your points at Vodafone!</div>
+                            </div>
+                        </div>
+                
+            
+        
+    </div>
+    
     <!-- Navbar End -->
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
@@ -56,17 +156,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Fifth settlement, Ciro, Egypt</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+01289096856</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bffr.team@gmail.com</small>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- Full Screen Search End -->
     <!-- Service Start -->
     <!DOCTYPE html>

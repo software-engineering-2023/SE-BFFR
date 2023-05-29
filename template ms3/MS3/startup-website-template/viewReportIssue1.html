@@ -76,7 +76,6 @@
              <td>CAF,5A</td>
              <td>Extra amount Withdrawn</td>
              <td>
-                 <!-- Add buttons for each row -->
                  <button id= "deactivate1" class="btn btn-primary button-link" type="deactivate1">Deactivate credit activity </button>
                  <button id= "restore1" class="btn btn-primary button-link" type="restore1">Restore extra amount </button>
              </td>
@@ -86,28 +85,22 @@
  </br>
  </br>
  <a href="bankerView.html" class="btn btn-primary button-link">Back</a>
- <a href="first.html" class="btn btn-primary button-link">Home</a>
 <script>
-var deactivate1 = document.getElementById("deactivate1");
- // Add an event listener to the submit button
- deactivate1.addEventListener("click", function (event) {
- event.preventDefault(); // Prevent form submission (adjust if needed)
- // Show the success message as an alert box
- window.alert("credit card issue resolved!");
-// Redirect to the home page (replace "home.html" with the actual home page URL)
-window.location.href = "bankerView.html";
-});
+var deactivate = document.getElementById("deactivate1");
+        deactivate.addEventListener("click", function (event) {
+        event.preventDefault();
+         var row = this.closest("tr");
+         row.remove();
+        window.alert("Credit card issue resolved!");
+}      );
 
-// Get a reference to the submit button
-var restore1 = document.getElementById("restore1");
- // Add an event listener to the submit button
- restore1.addEventListener("click", function (event) {
- event.preventDefault(); // Prevent form submission (adjust if needed)
- // Show the success message as an alert box
- window.alert("credit card issue resolved!");
-// Redirect to the home page (replace "home.html" with the actual home page URL)
-window.location.href = "bankerView.html";
-});
+       var restore = document.getElementById("restore1");
+       restore.addEventListener("click", function (event) {
+       event.preventDefault();
+       var row = this.closest("tr");
+       row.remove();
+       window.alert("Credit card issue resolved!");
+    });
 </script>
   </div>
 </div>
