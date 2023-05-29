@@ -102,7 +102,7 @@
                             </div>
                             <br />
                             <div class="col-xl-12">
-                                <input type="number" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account Number" style="height: 55px;" required>
+                                <input type="text" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account No." style="height: 55px;" required>
                             </div>
                             <br />
                             <div class="col-12">
@@ -117,22 +117,12 @@
                                 <input type="number" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
                             </div>
                             <br />
-                            <div class="col-xl-12">
-                                <input type="text" id="currency" class="form-control bg-light border-0" placeholder="Currency" style="height: 55px;" required>
-                            </div>
-                            <br />
-                            <div class="col-xl-12">
-                                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Transaction Date:" style="height: 55px;" required>
-                            </div>
-                            <br />
+                           
                             <div class="col-xl-12">
                                 <input type="text" id="transactionPurpose" class="form-control bg-light border-0" placeholder="Transaction Purpose" style="height: 55px;" required>
                             </div>
                             </br>
-                            <div class="col-xl-12">
-                                <input type="text" id="transactionDescription" class="form-control bg-light border-0" placeholder="Transaction Description" style="height: 55px;" required>
-                            </div>
-                            <br />
+                            
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
@@ -155,10 +145,10 @@ submitButton.addEventListener("click", function(event) {
     var beneficiaryAccountNumber = document.getElementById("beneficiaryAccountNumber").value;
     var accountNumber = document.getElementById("accountNumber").value;
     var amount = document.getElementById("amount").value;
-    var currency = document.getElementById("currency").value;
-    var transactionDate = document.getElementById("dateInput").value;
+    
+    
     var transactionPurpose = document.getElementById("transactionPurpose").value;
-    var transactionDescription = document.getElementById("transactionDescription").value;
+    
 
     
     if (
@@ -173,10 +163,9 @@ submitButton.addEventListener("click", function(event) {
         !beneficiaryAccountNumber ||
         !accountNumber ||
         !amount ||
-        !currency ||
-        !transactionDate ||
-        !transactionPurpose ||
-        !transactionDescription
+        
+        !transactionPurpose 
+        
     ) {
         
         errorMessage.style.display = "block"; 

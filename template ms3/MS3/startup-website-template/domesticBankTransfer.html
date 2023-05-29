@@ -79,7 +79,7 @@
                             </div>
                             <br />
                             <div class="col-xl-12">
-                                <input type="number" id="bankCode" class="form-control bg-light border-0" placeholder="Bank Code" style="height: 55px;" required>
+                                <input type="text" id="bankCode" class="form-control bg-light border-0" placeholder="Bank Code" style="height: 55px;" required>
                             </div>
                             <br />
                             <div class="col-xl-12">
@@ -95,7 +95,7 @@
                             </div>
                             <br />
                             <div class="col-xl-12">
-                                <input type="number" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account Number" style="height: 55px;" required>
+                                <input type="number" id="beneficiaryAccountNumber" class="form-control bg-light border-0" placeholder="Beneficiary Account No." style="height: 55px;" required>
                             </div>
                             <br />
                             <div class="col-12">
@@ -110,22 +110,13 @@
                                 <input type="number" id="amount" class="form-control bg-light border-0" placeholder="Amount" style="height: 55px;" required>
                             </div>
                             <br />
-                            <div class="col-xl-12">
-                                <input type="text" id="currency" class="form-control bg-light border-0" placeholder="Currency" style="height: 55px;" required>
-                            </div>
-                            <br />
-                            <div class="col-xl-12">
-                                <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Transaction Date" style="height: 55px;" required>
-                            </div>
-                            <br />
+                           
+                            
                             <div class="col-xl-12">
                                 <input type="text" id="transactionPurpose" class="form-control bg-light border-0" placeholder="Transaction Purpose" style="height: 55px;" required>
                             </div>
                             </br>
-                            <div class="col-xl-12">
-                                <input type="text" id="transactionDescription" class="form-control bg-light border-0" placeholder="Transaction Description" style="height: 55px;" required>
-                            </div>
-                            <br />
+                            
                 
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
@@ -146,10 +137,10 @@
                               var beneficiaryAccountNumberInput = document.getElementById("beneficiaryAccountNumber");
                               var accountNumberInput = document.getElementById("accountNumber");
                               var amountInput = document.getElementById("amount");
-                              var currencyInput = document.getElementById("currency");
-                              var dateInput = document.getElementById("dateInput");
+                             
+                              
                               var transactionPurposeInput = document.getElementById("transactionPurpose");
-                              var transactionDescriptionInput = document.getElementById("transactionDescription");
+                              
 
     
     if (
@@ -162,10 +153,10 @@
         beneficiaryAccountNumberInput.value === "" ||
         accountNumberInput.value === "" ||
         amountInput.value === "" ||
-        currencyInput.value === "" ||
-        dateInput.value === "" ||
-        transactionPurposeInput.value === "" ||
-        transactionDescriptionInput.value === ""
+        
+        
+        transactionPurposeInput.value === "" 
+       
     ) {
        
         errorMessage.style.display = "block"; 
