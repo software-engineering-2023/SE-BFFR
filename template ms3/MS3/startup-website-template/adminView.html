@@ -146,20 +146,6 @@
         function showAlert() {
         alert("Completed Succefully!");
         }
-        function performAction() {
-        var userRole = document.getElementById("userRole").value;
-        var selectedAction = getSelectedAction();
-        var username = document.getElementById("usernameInput").value;
-        var password = document.getElementById("passwordInput").value;
-    
-        if (!userRole || !selectedAction || !username || !password) {
-         errorMessage.style.display = "block";
-         }
-        else{
-            errorMessage.style.display = "none";
-            alert("Action performed successfully!");
-        }
-        }
   
         function getSelectedAction() {
         var radios = document.getElementsByName("radioGroup");
@@ -171,6 +157,31 @@
         }
         return null;
        }
+
+       function performAction() {
+    var userRole = document.getElementById("userRole").value;
+    var selectedAction = getSelectedAction();
+    var username = document.getElementById("usernameInput").value;
+    var password = document.getElementById("passwordInput").value;
+
+    if (!userRole || !selectedAction || !username || !password) {
+        errorMessage.style.display = "block";
+    } else {
+        errorMessage.style.display = "none";
+        alert("Action performed successfully!");
+
+        document.getElementById("userRole").selectedIndex = 0;
+        document.querySelector('input[name="radioGroup"]:checked').checked = false;
+        document.getElementById("usernameInput").value = "";
+        document.getElementById("passwordInput").value = "";
+
+        var textboxesDiv = document.getElementById("textboxes");
+        var button = document.getElementById("manageActivityButton");
+        textboxesDiv.style.display = "none";
+        button.textContent = "Manage users activity";
+    }
+}
+
     </script>
 </body>
 </html>
