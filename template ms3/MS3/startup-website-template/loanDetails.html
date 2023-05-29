@@ -151,19 +151,25 @@
     var paymentAmount = 1000;
 
     if (paymentAmount > loanAmountLeft) {
-      alert('Payment amount exceeds the loan amount left.');
-      return;
+        alert('Payment amount exceeds the loan amount left.');
+        return;
     }
 
-    loanAmountLeft -= paymentAmount;
-    loanAmountLeftElement.innerText = loanAmountLeft.toFixed(2);
+    // Ask for confirmation before proceeding with the payment
+    var confirmation = confirm('Are you sure you want to make the payment?');
 
-    if (loanAmountLeft === 0) {
-      // Remove the table row if the loan amount left is zero
-      var tableRow = loanAmountElement.parentNode;
-      tableRow.parentNode.removeChild(tableRow);
+    if (confirmation) {
+        loanAmountLeft -= paymentAmount;
+        loanAmountLeftElement.innerText = loanAmountLeft.toFixed(2);
+
+        if (loanAmountLeft === 0) {
+            // Remove the table row if the loan amount left is zero
+            var tableRow = loanAmountElement.parentNode;
+            tableRow.parentNode.removeChild(tableRow);
+        }
     }
-  }
+}
+
 </script>
 
 <style>
