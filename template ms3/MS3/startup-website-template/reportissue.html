@@ -141,6 +141,7 @@
                             <div class="button-container">
                                 <a href="services.html" class="btn btn-primary button-link">Back</a>
                             </div>
+                            <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
             
                             <!-- JavaScript -->
                             <script>
@@ -160,8 +161,9 @@
                                     // Check if any field is empty
                                     if (accountNumber === "" || email === "" || issueSubject === "" || issueDescription === "") {
                                         // Show an error message for the empty fields
-                                        window.alert("Please fill in all the fields.");
+                                        errorMessage.style.display = "block"; // Show the error message
                                     } else {
+                                        errorMessage.style.display = "none"; // Hide the error message
                                         // Show the success message as an alert box
                                         window.alert("Your Report is sent Successfully!");
             
