@@ -58,8 +58,8 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Please fill the following information for creating an account</h1>
+                        <h5 class="fw-bold text-primary text-uppercase">Sign Up</h5>
+                        <h1 class="mb-0">Please fill the following information to create an Online Account</h1>
                     </div>
                     <div class="button-container">
                         <a href="first.html" class="btn btn-primary button-link">Back</a>
@@ -70,7 +70,11 @@
                         <form>
                             <br>
                             <div class="col-xl-12">
-                                <input type="number" id="accountNumberInput" class="form-control bg-light border-0" placeholder="Bank Account Number" style="height: 55px;">
+                                <input type="text" id="accountNumberInput" class="form-control bg-light border-0" placeholder="Bank Account Number" style="height: 55px;">
+                            </div>
+                            <br />
+                            <div class="col-12">
+                                <input type="email" id="emailInput" class="form-control bg-light border-0" placeholder="Email" style="height: 55px;" required>
                             </div>
                             </br>
                             <div class="col-xl-12">
@@ -94,12 +98,14 @@
                                 submitButton.addEventListener("click", function (event) {
                                     event.preventDefault(); 
                                     var accountNumber = document.getElementById("accountNumberInput").value;
+                                    var email = document.getElementById("emailInput").value;
                                     var username = document.getElementById("usernameInput").value;
                                     var password = document.getElementById("passwordInput").value;
                                     var confirmPassword = document.getElementById("confirmPasswordInput").value;
                 
                                     if (
                                         accountNumber === "" ||
+                                        email === "" ||
                                         username === "" ||
                                         password === "" ||
                                         confirmPassword === ""

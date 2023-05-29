@@ -124,13 +124,7 @@
                             <div class="col-md-6">
                                 <input type="email" id="emailInput" class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;" required>
                             </div>
-                            <div class="col-12">
-                                <select id="issueSubject" class="form-select bg-light border-0" style="height: 55px;" required>
-                                    <option selected disabled>Issue Subject</option>
-                                    <option value="1">Technical issue</option>
-                                    
-                                </select>
-                            </div>
+                            
                             <div class="col-12">
                                 <textarea id="issueDescription" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Issue Description" required></textarea>
                             </div>
@@ -149,11 +143,11 @@
                                    
                                     var accountNumber = document.getElementById("accountNumber").value;
                                     var email = document.getElementById("emailInput").value;
-                                    var issueSubject = document.getElementById("issueSubject").value;
+                                    
                                     var issueDescription = document.getElementById("issueDescription").value;
             
                                     
-                                    if (accountNumber === "" || email === "" || issueSubject === "" || issueDescription === "") {
+                                    if (accountNumber === "" || email === "" ||  issueDescription === "") {
                                         
                                         errorMessage.style.display = "block"; 
                                       } 

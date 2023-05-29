@@ -79,6 +79,13 @@
                                 <input type="text" id="lastNameInput" class="form-control bg-light border-0" placeholder="Last Name" style="height: 55px;" required>
                             </div>
                             <br>
+                            <style>
+                                label[for="dateInput"] {
+                                    color: white;
+                                }
+                            </style>
+                            
+                            <label for="dateInput">Date of Birth:</label>
                             <div class="col-xl-12">
                                 <input type="date" id="dateInput" class="form-control bg-light border-0" placeholder="Date of birth" style="height: 55px;" required>
                             </div>
@@ -113,12 +120,26 @@
                                     <option value="1">Savings Account</option>
                                     <option value="2">Checking Account</option>
                                     <option value="3">Business Account</option>
+                                    <option value="4">Certificate of Deposit Account</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="col-12">
+                                <select id="currency" class="form-select bg-light border-0" style="height: 55px;" required>
+                                    <option selected disabled>Select Currency</option>
+                                    <option value="1">EGP</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">EUR</option>
+                                    <option value="4">CAD</option>
+                                    <option value="5">GBP</option>
+                                    <option value="6">KWD</option>
                                 </select>
                             </div>
                             <br>
                             <div class="col-xl-12">
                                 <input type="text" id="usernameInput" class="form-control bg-light border-0" placeholder="Username" style="height: 55px;" required>
                             </div>
+                            
                             </br>
                             <div class="col-12">
                                 <input type="password" id="passwordInput" class="form-control bg-light border-0" placeholder="Create Password" style="height: 55px;" required>
@@ -147,6 +168,7 @@
                                     var nationalId = document.getElementById("nationalIdInput").value;
                                     var job = document.getElementById("jobInput").value;
                                     var accountType = document.getElementById("accountType").value;
+                                    var currency = document.getElementById("currency").value;
                                     var username = document.getElementById("usernameInput").value;
                                     var password = document.getElementById("passwordInput").value;
                                     var confirmPassword = document.getElementById("confirmPasswordInput").value;
@@ -163,6 +185,7 @@
                                         nationalId === "" ||
                                         job === "" ||
                                         accountType === "" ||
+                                        currency === "" ||
                                         username === "" ||
                                         password === "" ||
                                         confirmPassword === ""

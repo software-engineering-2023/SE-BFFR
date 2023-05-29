@@ -80,6 +80,11 @@
                             </div>
                             <br>
                             <div class="col-xl-12">
+                                <input type="number" id="billNumber" class="form-control bg-light border-0" placeholder="Bill Number" style="height: 55px;" required>
+                            </div>
+                            <br>
+                            
+                            <div class="col-xl-12">
                                 <input type="number" id="billAmount" class="form-control bg-light border-0" placeholder="Bill Amount" style="height: 55px;" required>
                             </div>
                             </br>
@@ -101,11 +106,12 @@
                                event.preventDefault(); 
                                var accountTypeInput = document.getElementById("accountType");
                                var billAmountInput = document.getElementById("billAmount");
+                               var billNumberInput = document.getElementById("billNumber");
                                var accountNumberInput = document.getElementById("accountNumber");
                              if (accountTypeInput.value === "") {
                                 window.alert("Please select a bill type.");
                                   } 
-                             else if (billAmountInput.value === "" || accountNumberInput.value === "") {
+                             else if (billAmountInput.value === "" || accountNumberInput.value === "" || billNumberInput ==="") {
                                 errorMessage.style.display = "block"; 
                                 } 
                              else {

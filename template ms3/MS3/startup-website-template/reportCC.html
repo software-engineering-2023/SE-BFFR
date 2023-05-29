@@ -58,7 +58,7 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Report Credit Crad Issue</h5>
+                        <h5 class="fw-bold text-primary text-uppercase">Report Credit Card Issue</h5>
                         <h1 class="mb-0">Following information is required to Report an Issue</h1>
                     </div>
                     <div class="button-container">
@@ -86,7 +86,7 @@
             <br>
         </br>
             <div class="col-xl-12">
-                <input id="phonenumber" type="number" class="form-control bg-light border-0" placeholder="Phone Number" style="height: 55px;">
+                <input id="text" type="number" class="form-control bg-light border-0" placeholder="Phone Number" style="height: 55px;">
             </div>
             </br>
             <div class="col-xl-12">
@@ -131,6 +131,17 @@
             </div>
             <br>
             </br>
+            <style>
+                #myCheckbox + label {
+                  color: white;
+                }
+              </style>
+              
+              <input type="checkbox" id="myCheckbox">
+              <label for="myCheckbox">Apply For Replacement Card</label>
+              
+            <br>
+            </br> 
 
             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
