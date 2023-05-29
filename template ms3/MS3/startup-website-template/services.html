@@ -135,7 +135,10 @@
                             </div>
                         </div>
                 
-            
+    </div>  
+</nav>
+</div>
+</div>
         
     </div>
     
@@ -379,7 +382,18 @@
         } else {
             reminderdropdown.style.display = "none";
         }
-    });</script>
+    });
+    function showNotificationList() {
+            var notificationList = document.getElementById("notificationList");
+            
+            if (notificationList.style.display === "none") {
+                notificationList.style.display = "block";
+            } else {
+                notificationList.style.display = "none";
+            }
+        }
+    </script>
+
 <!-- Service End -->
 <!-- Vendor End -->
 <!-- Footer End -->
