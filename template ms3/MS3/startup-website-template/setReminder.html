@@ -51,45 +51,7 @@
     </div>
 
     <!-- Topbar End -->
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>BFFR</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                            <a href="feature.html" class="dropdown-item">Our features</a>
-                            <a href="team.html" class="dropdown-item">Team Members</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="quote.html" class="dropdown-item active">Free Quote</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-            </div>
-        </nav>
 
-
-    </div>
-    <!-- Navbar End -->
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -131,35 +93,30 @@
                                 <input type="date" id="dueDateInput" class="form-control bg-light border-0" placeholder="Due Date" style="height: 55px;" required>
                             </div>
                             </br>
-                            <!-- Submit button -->
+                           
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
     
-                            <!-- JavaScript -->
+                           
                             <script>
-                                // Get a reference to the submit button
+                                
                                 var submitButton = document.getElementById("submitButton");
     
-                                // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
-    
-                                    // Get the values of the input fields
+                                    event.preventDefault(); 
                                     var reminderDate = document.getElementById("dateInput").value;
                                     var billType = document.getElementById("accountType").value;
                                     var amount = document.getElementById("amount").value;
                                     var dueDate = document.getElementById("dueDateInput").value;
     
-                                    // Check if any field is empty
+                                    
                                     if (reminderDate === "" || billType === "" || amount === "" || dueDate === "") {
-                                        // Show an error message for the empty fields
-                                        errorMessage.style.display = "block"; // Show the error message
+                                        
+                                        errorMessage.style.display = "block"; 
                                     } else {
-                                        errorMessage.style.display = "none"; // Hide the error message
-                                        // Show the success message as an alert box
+                                        errorMessage.style.display = "none"; 
                                         window.alert("You set a Reminder Successfully!");
     
-                                        // Redirect to the home page (replace "services.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
                                 });

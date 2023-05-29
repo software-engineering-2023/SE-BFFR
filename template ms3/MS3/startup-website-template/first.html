@@ -72,22 +72,19 @@
                     <a href="contact2.html" class="nav-item nav-link">Contact</a>
                     
 
-                    <script>// Get references to the button and dropdown menu
+                    <script>
                         var signupButton = document.getElementById("signupButton");
                         var signupDropdown = document.getElementById("signupDropdown");
-
-                        // Hide the dropdown menu by default
                         signupDropdown.style.display = "none";
-
-                        // Add a click event listener to the button
                         signupButton.addEventListener("click", function () {
-                            // Toggle the visibility of the dropdown menu
+                            
                             if (signupDropdown.style.display === "none") {
                                 signupDropdown.style.display = "block";
                             } else {
                                 signupDropdown.style.display = "none";
                             }
-                        });</script>
+                        });
+                    </script>
 
 
         </nav>

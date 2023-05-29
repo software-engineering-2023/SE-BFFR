@@ -31,7 +31,6 @@
     <link href="css/style.css" rel="stylesheet">
 
     <head>
-        <!-- ... -->
         <style>
             .notification-container {
                 position: fixed;
@@ -75,7 +74,6 @@
                 border-radius: 50%;
             }
     
-            /* Notification List */
             .notification-list {
                 position: absolute;
                 top: -220px;
@@ -272,7 +270,6 @@
         </style>
     </head>
     <body>
-        <!-- Your webpage content here -->
         <!-- Reminder Popup -->
         <div id="reminderPopup" class="reminder-popup" style="display: none;">
             
@@ -303,23 +300,17 @@
 
         </style>
 
-        <!-- JavaScript -->
         <script>
-            // Show the reminder popup
             function showReminderPopup() {
                 document.getElementById("reminderPopup").style.display = "block";
             }
-
-            // Close the reminder popup
             function closeReminderPopup() {
                 document.getElementById("reminderPopup").style.display = "none";
             }
 
-            // Trigger the popup when necessary (e.g., when the payment due date approaches)
-            // Call the showReminderPopup() function at the appropriate time
             showReminderPopup();
 
-            // Attach an event listener to the close button
+            
             document.getElementById("closePopupBtn").addEventListener("click", closeReminderPopup);
         </script>
     </body>
@@ -435,16 +426,14 @@
     </div>
 </div>
 <script>
-    // Get references to the button and dropdown menu
+    
     var reminderbutton = document.getElementById("reminderbutton");
     var reminderdropdown = document.getElementById("reminderdropdown");
 
-    // Hide the dropdown menu by default
     signupDropdown.style.display = "none";
 
-    // Add a click event listener to the button
     reminderbutton.addEventListener("click", function () {
-        // Toggle the visibility of the dropdown menu
+        
         if (reminderdropdown.style.display === "none") {
             reminderdropdown.style.display = "block";
         } else {
@@ -452,16 +441,16 @@
         }
     });
 
-    // Show or hide the notification list
+    
     function showNotificationList() {
         var notificationList = document.getElementById("notificationList");
         if (notificationList.style.display === "none") {
-            // Calculate the position of the notification list based on the bell's position
+
             var bellPosition = document.querySelector(".notification-bell").getBoundingClientRect();
             var notificationListHeight = notificationList.offsetHeight;
             var notificationListTop = bellPosition.top - notificationListHeight;
 
-            // Update the position and display of the notification list
+            
             notificationList.style.top = notificationListTop + "px";
             notificationList.style.display = "block";
         } else {
@@ -472,8 +461,7 @@
     </script>
 
 <!-- Service End -->
-<!-- Vendor End -->
-<!-- Footer End -->
+
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 

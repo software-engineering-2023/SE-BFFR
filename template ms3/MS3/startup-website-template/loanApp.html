@@ -51,9 +51,6 @@
     </div>
 
     <!-- Topbar End -->
-    <!-- Navbar Start -->
-    
-    <!-- Navbar End -->
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -103,23 +100,18 @@
                                 </select>
                             </div>
                             </br>
-                            <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                         </form>
                     </div>
                 </div>
                 
-                <!-- JavaScript -->
                 <script>
-                    // Get a reference to the submit button
+
                     var submitButton = document.getElementById("submitButton");
-                
-                    // Add an event listener to the submit button
                     submitButton.addEventListener("click", function (event) {
-                        event.preventDefault(); // Prevent form submission and page reload
-                
-                        // Check if all fields are filled
+                        event.preventDefault(); 
+                        
                         var accountNumber = document.getElementById("accountNumber").value;
                         var amount = document.getElementById("amount").value;
                         var repaymentPeriod = document.getElementById("repaymentPeriod").value;
@@ -135,15 +127,12 @@
                             salary &&
                             purpose
                         ) {
-                            errorMessage.style.display = "none"; // Hide the error message
-                            // Show the success message as an alert dialog
+                            errorMessage.style.display = "none"; 
                             window.alert("You applied for a Loan Successfully!");
-                
-                            // Redirect to the services page
                             window.location.href = "services.html";
                         } else {
-                            // Show an error message
-                            errorMessage.style.display = "block"; // Show the error message
+                            
+                            errorMessage.style.display = "block"; 
                         }
                     });
                 </script>

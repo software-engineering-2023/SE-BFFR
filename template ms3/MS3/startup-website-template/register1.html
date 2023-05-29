@@ -51,9 +51,6 @@
     </div>
 
     <!-- Topbar End -->
-    <!-- Navbar Start -->
-   
-    <!-- Navbar End -->
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -132,20 +129,13 @@
                             </div>
                             </br>
                 
-                            <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
-                            <!-- JavaScript -->
                             <script>
-                                // Get a reference to the submit button
                                 var submitButton = document.getElementById("submitButton");
-                
-                                // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                
-                                    // Check if any required field is empty
+                                    event.preventDefault(); 
                                     var firstName = document.getElementById("firstNameInput").value;
                                     var middleName = document.getElementById("middleNameInput").value;
                                     var lastName = document.getElementById("lastNameInput").value;
@@ -177,13 +167,12 @@
                                         password === "" ||
                                         confirmPassword === ""
                                     ){
-                                        // Display an error message if any field is empty
-                                        errorMessage.style.display = "block"; // Show the error message
+                                       
+                                        errorMessage.style.display = "block"; 
                                     } else {
-                                        errorMessage.style.display = "none"; // Hide the error message
+                                        errorMessage.style.display = "none"; 
                                         window.alert("You Signed Up Successfully!");
                 
-                                        // Redirect to the home page (replace "Htmlpage.html" with the actual home page URL)
                                         window.location.href = "Htmlpage.html";
                                     }
                                 });

@@ -155,7 +155,6 @@
 
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>200</td>
                                     <td>58947</td>
@@ -262,12 +261,9 @@
                                 function showNotificationList() {
                                     var notificationList = document.getElementById("notificationList");
                                     if (notificationList.style.display === "none") {
-                                        // Calculate the position of the notification list based on the bell's position
                                         var bellPosition = document.querySelector(".notification-bell").getBoundingClientRect();
                                         var notificationListHeight = notificationList.offsetHeight;
                                         var notificationListTop = bellPosition.top - notificationListHeight;
-
-                                        // Update the position and display of the notification list
                                         notificationList.style.top = notificationListTop + "px";
                                         notificationList.style.display = "block";
                                     } else {

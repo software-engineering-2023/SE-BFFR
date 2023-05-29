@@ -54,12 +54,6 @@
     </div>
     <!-- Topbar End -->
 
-
-    <!-- Navbar Start -->
-    
-    <!-- Navbar End -->
-
-
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
@@ -84,7 +78,7 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
-                <h1 class="mb-0">If You Have Any Query, Feel Free To Contact Us</h1>
+                <h1 class="mb-0">If You Have Any Inquiry, Feel Free To Contact Us</h1>
             </div>
             <div class="row g-5 mb-5">
                 <div class="col-lg-4">
@@ -137,7 +131,6 @@
                             <div class="col-12">
                                 <textarea id="messageInput" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
                             </div>
-                            <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Send Message</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                             <div class="button-container">
@@ -145,9 +138,7 @@
                             </div>
             
             
-                            <!-- JavaScript -->
                             <script>
-                                // Get references to the input fields and error message
                                 var nameInput = document.getElementById("nameInput");
                                 var emailInput = document.getElementById("emailInput");
                                 var subjectInput = document.getElementById("subjectInput");
@@ -155,20 +146,15 @@
                                 var errorMessage = document.getElementById("errorMessage");
                                 var submitButton = document.getElementById("submitButton");
             
-                                // Add an event listener to the submit button
                                 submitButton.addEventListener("click", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
+                                    event.preventDefault(); 
             
-                                    // Check if any field is empty
                                     if (nameInput.value === "" || emailInput.value === "" || subjectInput.value === "" || messageInput.value === "") {
-                                        errorMessage.style.display = "block"; // Show the error message
-                                    } else {
-                                        errorMessage.style.display = "none"; // Hide the error message
-            
-                                        // Show the success message as an alert box
+                                        errorMessage.style.display = "block";
+                                      } 
+                                    else {
+                                        errorMessage.style.display = "none"; 
                                         window.alert("Your Message is sent Successfully!");
-            
-                                        // Redirect to the home page (replace "home.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
                                 });
@@ -186,12 +172,6 @@
         </div>
     </div>
     <!-- Contact End -->
-
-
-    <!-- Vendor Start -->
-   
-    <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>

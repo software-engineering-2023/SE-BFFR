@@ -51,8 +51,7 @@
     </div>
 
     <!-- Topbar End -->
-    <!-- Navbar Start -->
-    <!-- Navbar End -->
+
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -137,16 +136,14 @@
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Transfer</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
-                            <!-- JavaScript -->
+                
                             <script>
-                               // Get a reference to the submit button
+                               
 var submitButton = document.getElementById("submitButton");
 
-// Add an event listener to the submit button
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent form submission (adjust if needed)
 
-    // Get input field values
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); 
     var bankName = document.getElementById("bankName").value;
     var bankCountry = document.getElementById("bankCountry").value;
     var bankCity = document.getElementById("bankCity").value;
@@ -163,7 +160,7 @@ submitButton.addEventListener("click", function(event) {
     var transactionPurpose = document.getElementById("transactionPurpose").value;
     var transactionDescription = document.getElementById("transactionDescription").value;
 
-    // Check if any field is empty
+    
     if (
         !bankName ||
         !bankCountry ||
@@ -181,24 +178,22 @@ submitButton.addEventListener("click", function(event) {
         !transactionPurpose ||
         !transactionDescription
     ) {
-        // Display an error message if any field is empty
-        errorMessage.style.display = "block"; // Show the error message
+        
+        errorMessage.style.display = "block"; 
         return;
     }
 
-    // Show a confirmation message
+    
     var confirmed = confirm("Are you sure you want to proceed with the transfer?");
     if (!confirmed) {
         return;
     }
 
-    // Hide the error message
+   
     errorMessage.style.display = "none";
 
-    // Show the success message as an alert box
+    
     window.alert("Your Transfer is Done Successfully!");
-
-    // Redirect to the home page (replace "home.html" with the actual home page URL)
     window.location.href = "services.html";
 });
 

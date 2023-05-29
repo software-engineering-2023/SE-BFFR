@@ -51,9 +51,6 @@
     </div>
 
     <!-- Topbar End -->
-    <!-- Navbar Start -->
-    
-    <!-- Navbar End -->
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -98,40 +95,32 @@
                                 </select>
                             </div>
                             </br>
-                
-                            <!-- Submit button -->
                             <button id="submitButton" class="btn btn-dark w-100 py-3" type="submit">Submit</button>
                             <p id="errorMessage" style="display: none; color: red;">Please fill in all fields.</p>
                 
-                            <!-- JavaScript -->
                             <script>
-                                // Get a reference to the loan application form and form inputs
+
                                 var loanApplicationForm = document.getElementById("loanApplicationForm");
                                 var accountNumberInput = document.getElementById("accountNumber");
                                 var collateralInput = document.getElementById("collateralInput");
                                 var salaryInput = document.getElementById("salaryInput");
                                 var creditCardTypeSelect = document.getElementById("creditCardTypeSelect");
                 
-                                // Add an event listener to the form submission
+                               
                                 loanApplicationForm.addEventListener("submit", function (event) {
-                                    event.preventDefault(); // Prevent form submission (adjust if needed)
-                
-                                    // Check if all fields are filled
+                                    event.preventDefault(); 
+                                    
                                     if (
                                         accountNumberInput.value === "" ||
                                         collateralInput.value === "" ||
                                         salaryInput.value === "" ||
                                         creditCardTypeSelect.value === ""
                                     ) {
-                                        // Display an error message if any field is empty
-                                        errorMessage.style.display = "block"; // Show the error message
+                                        
+                                        errorMessage.style.display = "block"; 
                                     } else {
-                                        errorMessage.style.display = "none"; // Hide the error message
-            
-                                        // Show the success message as an alert box
+                                        errorMessage.style.display = "none"; 
                                         window.alert("You applied for a loan successfully!");
-                
-                                        // Redirect to the home page (replace "services.html" with the actual home page URL)
                                         window.location.href = "services.html";
                                     }
                                 });
